@@ -1,0 +1,29 @@
+2019-03-18 11:32:41.100  INFO  --- [main] .onTestStart(TestResultListener.java:73)ogger{39} : leftHelp 测试用例始执行！
+2019-03-18 11:32:41.104  INFO  --- [main] lp(PersonalCenter_001_Left_Test.java:62)ogger{39} : 开始添加登录cookie
+2019-03-18 11:32:42.945  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，头像]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/div/div/img
+2019-03-18 11:32:43.000  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-18 11:32:43.007  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，头像]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/div/div/img
+2019-03-18 11:32:43.019  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击头像
+2019-03-18 11:32:43.085  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击头像]
+2019-03-18 11:32:43.086  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，我的作品标签]By.xpath: /html/body/div[2]/div/div/a[1]
+2019-03-18 11:32:43.123  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : false
+2019-03-18 11:32:43.672  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-18 11:32:43.683  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，我的作品标签]By.xpath: /html/body/div[2]/div/div/a[1]
+2019-03-18 11:32:43.705  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击我的作品
+2019-03-18 11:32:43.833  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (5d0fe1762b1dd052d0e9a94a21856862)] -> xpath: /html/body/div[2]/div/div/a[1]]步骤出现了新的句柄]CDwindow-834FC699674A081566F9D5C065EB4BD8
+2019-03-18 11:32:43.842  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-834FC699674A081566F9D5C065EB4BD8]
+2019-03-18 11:32:43.842  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击我的作品]
+2019-03-18 11:32:44.844  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[点击头像上传按钮]By.xpath: //*[@id="app"]/div/div/div[2]/div/div/div/div[1]/div/div/div/div/img
+2019-03-18 11:32:45.897  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-18 11:32:45.906  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [点击头像上传按钮]By.xpath: //*[@id="app"]/div/div/div[2]/div/div/div/div[1]/div/div/div/div/img
+2019-03-18 11:32:45.924  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[点击头像上传按钮]By.xpath: //*[@id="app"]/div/div/div[2]/div/div/div/div[1]/div/div/div/div/img
+2019-03-18 11:32:45.942  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-18 11:32:45.949  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [点击头像上传按钮]By.xpath: //*[@id="app"]/div/div/div[2]/div/div/div/div[1]/div/div/div/div/img
+2019-03-18 11:32:45.960  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击修改头像
+2019-03-18 11:32:46.002  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [修改头像]
+2019-03-18 11:32:50.062  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[点击头像上传按钮]By.xpath: //*[@id="app"]/div/div/div[2]/div/div/div/div[1]/div/div/div/div/img
+2019-03-18 11:32:50.080  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-18 11:32:50.087  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [点击头像上传按钮]By.xpath: //*[@id="app"]/div/div/div[2]/div/div/div/div[1]/div/div/div/div/img
+2019-03-18 11:32:50.109  INFO  --- [main] mg(PersonalCenter_001_Left_Test.java:95)ogger{39} : 修改头像成功
+2019-03-18 11:32:50.167  INFO  --- [main] nTestSuccess(TestResultListener.java:67)ogger{39} : leftHelp 测试用例执行成功!
+2019-03-18 11:32:50.191  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = leftHelp

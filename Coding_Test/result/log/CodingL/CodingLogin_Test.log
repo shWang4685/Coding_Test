@@ -1,0 +1,4 @@
+[2019-01-14 11:25:41] [INFO] HomeClick_001 测试用例始执行！
+[2019-01-14 11:25:41] [INFO] 打开测试页面：[https://dev.coding.qq.com/home/#/]
+[2019-01-14 11:25:48] [WARN] HomeClick_001 测试用例执行失败
+[2019-01-14 11:25:48] [INFO] [2019_01_14_11_25_48_HomeClick_001] 截图成功，保存在[ ./result/screenshot/2019_01_14_11_25_48_HomeClick_001.jpg ]

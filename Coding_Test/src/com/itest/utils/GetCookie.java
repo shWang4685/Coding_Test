@@ -1,0 +1,124 @@
+package com.itest.utils;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Set;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import com.itest.testcases.bean.LoginBean;
+
+/**
+ * 该帮助类主要实现免账号秘密登录
+ * 实现逻辑：
+ * 1.将账号Cookie运行刻制一份数据到地址
+ * 2.再访问页面时候，直接将该账号的Cookie信息注入的驱动中
+ * 3.刷新页面
+ * 使用方法：
+ * 1.账号未登录过即将访问的页面，先运行本脚本
+ * 2.用例中直接调用getCookie方法便可
+ * @author 24431
+ */
+
+public class GetCookie {
+    WebDriver driver=null;        
+    public static void main(String []args){
+      GetCookie gc=new GetCookie();
+      gc.writeCookie();
+      gc.getCookie();
+    }
+    
+    public void writeCookie(){
+      driver=new GetBorwser().getWebDriver();
+      FileWriter fw=null;
+      BufferedWriter bw=null;
+      LoginBean login=new LoginBean();
+      login.teacherLogin(driver);
+      
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      
+      File file =new File("./config/cookie.properties");
+      Set<Cookie> cookies=driver.manage().getCookies();
+      
+      if(file.exists()){
+        file.delete();
+        try{
+          file.createNewFile();
+        }catch(IOException io){
+          
+          io.printStackTrace();
+        }        
+      }      
+      try {
+        fw=new FileWriter(file);
+        bw=new BufferedWriter(fw);
+        for(Cookie c:cookies){
+          bw.write(c.getDomain()+";"+c.getName()+";"+c.getValue()+";"+c.getPath()+";"+c.getExpiry()+";"+c.isSecure());
+          bw.newLine();
+        }
+        bw.flush();
+        
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }finally{
+        if(bw!=null || fw!=null){
+          try {
+            bw.close();
+            fw.close();
+          } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+          }
+        }                
+      }
+      driver.quit();
+      
+    }
+    
+    public void getCookie(){
+      driver=new GetBorwser().getWebDriver();
+      driver.get("https://coding.qq.com/home/");
+      File file=new File("./config/cookie.properties");
+      
+      try {
+        FileReader fr=new FileReader(file);
+        BufferedReader br=new BufferedReader(fr);
+        
+        String line=null;
+        while((line=br.readLine())!=null){
+          String [] sz = line.split(";");
+          String doman =  sz[0].trim();
+          String name = sz[1].trim();
+          String value = sz[2].trim();
+          String path = sz[3].trim();
+          Date date = null;
+          
+          if(!(sz[4].equals("null"))){    
+            date = new Date(sz[4]);
+            System.out.println("date="+date);
+
+          }
+          Boolean bl = Boolean.valueOf(sz[5]);                      
+          Cookie ck = new Cookie(name,value,doman,path,date,bl); 
+          driver.manage().addCookie(ck);
+        }
+      } catch (FileNotFoundException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }     
+      driver.navigate().refresh();
+    }
+    
+    
+  
+}

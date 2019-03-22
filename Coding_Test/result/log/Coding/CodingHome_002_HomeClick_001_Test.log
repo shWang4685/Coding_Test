@@ -1,0 +1,16 @@
+[2019-02-27 17:13:21] [INFO] HomeClick_001 测试用例始执行！
+[2019-02-27 17:13:22] [INFO] [读取到表格中用例的条数为]:0HeaderIndex
+[2019-02-27 17:13:22] [INFO] [该行为空，直接跳过]
+[2019-02-27 17:13:22] [INFO] [该行为空，直接跳过]
+[2019-02-27 17:13:22] [INFO] [该行为空，直接跳过]
+[2019-02-27 17:13:23] [INFO] 打开测试页面：[https://dev.coding.qq.com/home/#/]
+[2019-02-27 17:13:25] [WARN] [[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]] is unclickable, try again
+[2019-02-27 17:13:25] [WARN] [[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]] is unclickable, try again
+[2019-02-27 17:13:26] [WARN] [[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]] is unclickable, try again
+[2019-02-27 17:13:26] [WARN] [[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]] is unclickable, try again
+[2019-02-27 17:13:27] [WARN] [[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]] is unclickable, try again
+[2019-02-27 17:13:27] [WARN] [[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]] is unclickable
+[2019-02-27 17:13:27] [ERROR] Failed to click element [[[ChromeDriver: chrome on XP (5db86b547ed480b2f21b04f9fcfb8330)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]]]
+[2019-02-27 17:13:27] [WARN] HomeClick_001 测试用例执行失败
+[2019-02-27 17:13:28] [INFO] [2019_02_27_17_13_27_HomeClick_001] 截图成功，保存在[ ./result/screenshot/2019_02_27_17_13_27_HomeClick_001.jpg ]
+[2019-02-27 17:13:28] [INFO] 执行失败的用 = HomeClick_001

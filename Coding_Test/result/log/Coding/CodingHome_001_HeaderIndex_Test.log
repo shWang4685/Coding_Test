@@ -1,0 +1,104 @@
+2019-03-11 19:06:51.899  INFO  --- [main] .onTestStart(TestResultListener.java:73)ogger{39} : HeaderIndex 测试用例始执行！
+2019-03-11 19:06:52.422  INFO  --- [main] iumUtils.openUrl(SeleniumUtils.java:330)ogger{39} : 打开测试页面：[https://coding.qq.com/home/]
+2019-03-11 19:06:53.591  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，课程标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]
+2019-03-11 19:06:53.656  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:06:53.665  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，课程标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[2]
+2019-03-11 19:06:53.677  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击官网课程标签
+2019-03-11 19:06:53.826  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击官网课程标签]
+2019-03-11 19:06:53.957  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，首页标签]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/a[1]
+2019-03-11 19:06:53.986  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:06:53.992  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，首页标签]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/a[1]
+2019-03-11 19:06:54.002  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击官网首页标签
+2019-03-11 19:06:54.052  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击官网首页标签]
+2019-03-11 19:06:55.082  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-11 19:06:55.111  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:06:55.119  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-11 19:06:55.130  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击校园标签
+2019-03-11 19:06:55.259  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (15621403eab8cd2f81eb1719e56c0590)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]]步骤出现了新的句柄]CDwindow-9413C95963DE0D27BBB2DF2C660E2964
+2019-03-11 19:06:55.268  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-9413C95963DE0D27BBB2DF2C660E2964]
+2019-03-11 19:06:55.268  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击校园标签]
+2019-03-11 19:06:57.345  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，品牌logo]By.xpath: //*[@id="app"]/div/div[1]/div/div[1]/a
+2019-03-11 19:06:57.370  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:06:57.377  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，品牌logo]By.xpath: //*[@id="app"]/div/div[1]/div/div[1]/a
+2019-03-11 19:06:57.386  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击登录页面品牌logo
+2019-03-11 19:06:57.507  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (15621403eab8cd2f81eb1719e56c0590)] -> xpath: //*[@id="app"]/div/div[1]/div/div[1]/a]步骤出现了新的句柄]CDwindow-1D463B6EDFD539B10ABE68B68C111C73
+2019-03-11 19:06:57.523  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-1D463B6EDFD539B10ABE68B68C111C73]
+2019-03-11 19:06:57.523  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击登录页面品牌logo]
+2019-03-11 19:06:58.645  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，立即创作按钮]By.xpath: //*[@id="app"]/div/div/div/div[1]/a
+2019-03-11 19:06:59.721  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:06:59.729  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，立即创作按钮]By.xpath: //*[@id="app"]/div/div/div/div[1]/a
+2019-03-11 19:06:59.743  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击立即创作按钮
+2019-03-11 19:06:59.852  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (15621403eab8cd2f81eb1719e56c0590)] -> xpath: //*[@id="app"]/div/div/div/div[1]/a]步骤出现了新的句柄]CDwindow-DA5FB3F458E9D0903BA19698CD2DA034
+2019-03-11 19:06:59.859  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-DA5FB3F458E9D0903BA19698CD2DA034]
+2019-03-11 19:06:59.859  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击立即创作按钮]
+2019-03-11 19:07:02.037  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[JS实验室，品牌logo]By.xpath: //*[@id="app"]/div/div[1]/a
+2019-03-11 19:07:02.064  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:02.071  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [JS实验室，品牌logo]By.xpath: //*[@id="app"]/div/div[1]/a
+2019-03-11 19:07:02.083  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击游戏实验室页面品牌logo
+2019-03-11 19:07:02.285  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击游戏实验室页面品牌logo]
+2019-03-11 19:07:02.286  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，登录标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/a
+2019-03-11 19:07:02.322  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:02.328  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，登录标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/a
+2019-03-11 19:07:02.339  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击官网首页登录标签
+2019-03-11 19:07:04.385  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击官网首页登录标签]
+2019-03-11 19:07:13.366  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录窗口，账号密码输入登录标签]By.xpath: //*[@id="switcher_plogin"]
+2019-03-11 19:07:13.395  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:13.403  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录窗口，账号密码输入登录标签]By.xpath: //*[@id="switcher_plogin"]
+2019-03-11 19:07:13.424  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击登录窗口，qq账号密码输入登录标签
+2019-03-11 19:07:13.680  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [登录窗口，qq账号密码输入登录标签]
+2019-03-11 19:07:13.680  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 19:07:13.736  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:13.746  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 19:07:13.758  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录账号输入框
+2019-03-11 19:07:13.948  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录账号输入框]
+2019-03-11 19:07:13.948  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 19:07:13.974  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:13.985  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 19:07:14.043  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:301)ogger{39} : 点击了输入框
+2019-03-11 19:07:14.744  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 19:07:14.775  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:14.786  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 19:07:14.796  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录，密码输入框
+2019-03-11 19:07:14.939  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录，密码输入框]
+2019-03-11 19:07:14.940  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 19:07:14.961  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:14.977  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 19:07:14.991  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:301)ogger{39} : 点击了输入框
+2019-03-11 19:07:15.669  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录iframe，登录按钮]By.xpath: //*[@id="login_button"]
+2019-03-11 19:07:15.698  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:15.710  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录iframe，登录按钮]By.xpath: //*[@id="login_button"]
+2019-03-11 19:07:15.726  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录，登录按钮
+2019-03-11 19:07:15.857  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录，登录按钮]
+2019-03-11 19:07:15.858  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，头像]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/div/div/img
+2019-03-11 19:07:17.032  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:17.042  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，头像]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/div/div/img
+2019-03-11 19:07:17.054  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击头像
+2019-03-11 19:07:17.108  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击头像]
+2019-03-11 19:07:17.109  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，我的作品标签]By.xpath: /html/body/div[2]/div/div/a[1]
+2019-03-11 19:07:17.136  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : false
+2019-03-11 19:07:17.664  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:17.671  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，我的作品标签]By.xpath: /html/body/div[2]/div/div/a[1]
+2019-03-11 19:07:17.681  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击我的作品
+2019-03-11 19:07:17.755  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (15621403eab8cd2f81eb1719e56c0590)] -> xpath: /html/body/div[2]/div/div/a[1]]步骤出现了新的句柄]CDwindow-F0D53F4759841F5279C5B63AA8DFC562
+2019-03-11 19:07:17.762  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-F0D53F4759841F5279C5B63AA8DFC562]
+2019-03-11 19:07:17.762  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击我的作品]
+2019-03-11 19:07:19.923  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[个人中心页面，品牌logo]By.xpath: //*[@id="app"]/div/div/div[1]/div/div[1]/a
+2019-03-11 19:07:19.951  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:19.959  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [个人中心页面，品牌logo]By.xpath: //*[@id="app"]/div/div/div[1]/div/div[1]/a
+2019-03-11 19:07:19.970  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击个人中心页面品牌logo
+2019-03-11 19:07:20.039  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (15621403eab8cd2f81eb1719e56c0590)] -> xpath: //*[@id="app"]/div/div/div[1]/div/div[1]/a]步骤出现了新的句柄]CDwindow-6AB25B1AE9A1280ABEB86F4D2D335DEE
+2019-03-11 19:07:20.044  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-6AB25B1AE9A1280ABEB86F4D2D335DEE]
+2019-03-11 19:07:20.044  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击个人中心页面品牌logo]
+2019-03-11 19:07:21.045  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，头像]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/div/div/img
+2019-03-11 19:07:22.109  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:22.118  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，头像]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/div/div/img
+2019-03-11 19:07:22.129  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击头像
+2019-03-11 19:07:22.176  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击头像]
+2019-03-11 19:07:22.177  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，退出品标签]By.xpath: /html/body/div[2]/div/div/a[2]
+2019-03-11 19:07:22.204  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : false
+2019-03-11 19:07:22.727  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 19:07:22.736  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，退出品标签]By.xpath: /html/body/div[2]/div/div/a[2]
+2019-03-11 19:07:22.747  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击退出登录
+2019-03-11 19:07:22.809  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [退出登录]
+2019-03-11 19:07:23.508  INFO  --- [main] nTestSuccess(TestResultListener.java:67)ogger{39} : HeaderIndex 测试用例执行成功!
+2019-03-11 19:07:23.544  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = HeaderIndex

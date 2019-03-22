@@ -1,0 +1,62 @@
+package com.itest.testcases.teacher;
+
+import java.util.List;
+import jxl.common.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.itest.testcases.bean.LoginBean;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.LoginCookie;
+import com.itest.utils.SeleniumUtil;
+
+public class TeacherHome_003_Center_Test {
+  static Logger logger=Logger.getLogger(TeacherHome_002_LeftHelp_Test.class);
+  WebDriver driver=null;
+  ITestContext itestContext=null;
+  
+  @BeforeClass
+  public void  TeacherHome_003_center_Test(ITestContext itestContext){
+    this.itestContext=itestContext;
+    this.driver=new GetBorwser().getWebDriver();
+    itestContext.setAttribute("SELENIUM_DRIVER", driver);
+    LogConfiguration.initLog(this.getClass().getSimpleName());        
+  }
+  @Test
+  public void LeftHelp(){
+    SeleniumUtil seleniumUtil=new SeleniumUtil(driver);
+    //自动登录
+    LoginCookie loginCookie=new LoginCookie();
+    loginCookie.getCookie(driver);
+
+    //点击校园
+    String homeHandle=driver.getWindowHandle();
+    
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/div[2]/a[3]")).click();
+    seleniumUtil.pause(1000);
+    for(String s:driver.getWindowHandles()){
+      System.out.println(s);
+      if(s.equals(homeHandle)){
+        continue;
+      }else{
+        driver.switchTo().window(s);
+        seleniumUtil.pause(1000);
+        break;
+
+      }
+    }        
+    //点击课程中心标签    
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/ul/li[2]/ul/li[1]")).click();
+    //逐个点击课程标签，查看是否拉起课程页面
+    
+
+  }
+}

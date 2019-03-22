@@ -1,0 +1,62 @@
+2019-03-11 15:47:47.394  INFO  --- [main] .onTestStart(TestResultListener.java:73)ogger{39} : loginPage 测试用例始执行！
+2019-03-11 15:47:47.869  INFO  --- [main] iumUtils.openUrl(SeleniumUtils.java:330)ogger{39} : 打开测试页面：[https://coding.qq.com/]
+2019-03-11 15:47:49.046  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-11 15:47:49.102  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:47:49.111  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-11 15:47:49.121  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击校园标签
+2019-03-11 15:47:49.270  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (1d8be6374f59ae1984f3dff127863dab)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]]步骤出现了新的句柄]CDwindow-307CE490A67D240FD333BAEA3816E8CA
+2019-03-11 15:47:49.288  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-307CE490A67D240FD333BAEA3816E8CA]
+2019-03-11 15:47:49.288  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击校园标签]
+2019-03-11 15:47:49.291  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，班级码输入框]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/div/input
+2019-03-11 15:47:50.346  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:47:50.352  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，班级码输入框]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/div/input
+2019-03-11 15:47:50.363  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击班级码输入框
+2019-03-11 15:47:50.401  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击班级码输入框]
+2019-03-11 15:47:50.402  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，班级码输入框]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/div/input
+2019-03-11 15:47:50.420  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:47:50.427  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，班级码输入框]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/div/input
+2019-03-11 15:47:50.450  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:301)ogger{39} : 点击了输入框
+2019-03-11 15:47:51.025  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，加入班级按钮]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/div/a
+2019-03-11 15:47:51.051  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:47:51.059  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，加入班级按钮]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/div/a
+2019-03-11 15:47:51.069  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击进入按钮
+2019-03-11 15:47:51.113  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击进入按钮]
+2019-03-11 15:47:51.113  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，班级码输入错误提示p]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/p
+2019-03-11 15:47:51.655  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:47:51.662  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，班级码输入错误提示p]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/p
+2019-03-11 15:47:51.694  INFO  --- [main] tils.isDisplayed(SeleniumUtils.java:243)ogger{39} : 这个元素：[请输入正确的班级码][ xpath: //*[@id="app"]/div/div[2]/div/div/div[3]/p]有显示
+2019-03-11 15:47:51.695  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，qq登录按钮]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[1]/div/div[1]
+2019-03-11 15:47:51.723  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:47:51.731  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，qq登录按钮]By.xpath: //*[@id="app"]/div/div[2]/div/div/div[1]/div/div[1]
+2019-03-11 15:47:51.741  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录按钮
+2019-03-11 15:48:19.862  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录按钮]
+2019-03-11 15:48:19.996  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录窗口，账号密码输入登录标签]By.xpath: //*[@id="switcher_plogin"]
+2019-03-11 15:48:20.038  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:48:20.054  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录窗口，账号密码输入登录标签]By.xpath: //*[@id="switcher_plogin"]
+2019-03-11 15:48:20.068  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击登录窗口，qq账号密码输入登录标签
+2019-03-11 15:48:20.253  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [登录窗口，qq账号密码输入登录标签]
+2019-03-11 15:48:20.253  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 15:48:20.285  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:48:20.291  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 15:48:20.301  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录账号输入框
+2019-03-11 15:48:20.405  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录账号输入框]
+2019-03-11 15:48:20.405  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 15:48:20.424  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:48:20.431  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录页面，品牌logo]By.xpath:  //*[@id="u"]
+2019-03-11 15:48:20.439  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:301)ogger{39} : 点击了输入框
+2019-03-11 15:48:21.085  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 15:48:21.115  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:48:21.122  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 15:48:21.133  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录，密码输入框
+2019-03-11 15:48:21.233  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录，密码输入框]
+2019-03-11 15:48:21.234  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 15:48:21.253  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:48:21.262  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录iframe，密码输入input]By.xpath: //*[@id="p"]
+2019-03-11 15:48:21.272  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:301)ogger{39} : 点击了输入框
+2019-03-11 15:48:21.888  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[登录iframe，登录按钮]By.xpath: //*[@id="login_button"]
+2019-03-11 15:48:21.918  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-11 15:48:21.927  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [登录iframe，登录按钮]By.xpath: //*[@id="login_button"]
+2019-03-11 15:48:21.936  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击qq登录，登录按钮
+2019-03-11 15:48:22.068  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [qq登录，登录按钮]
+2019-03-11 15:48:23.448  INFO  --- [main] nTestSuccess(TestResultListener.java:67)ogger{39} : loginPage 测试用例执行成功!
+2019-03-11 15:48:23.482  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = loginPage

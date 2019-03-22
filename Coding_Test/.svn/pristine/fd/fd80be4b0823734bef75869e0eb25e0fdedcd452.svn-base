@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7897" started-at="2018-12-12T06:14:22Z" finished-at="2018-12-12T06:14:30Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7897" started-at="2018-12-12T06:14:22Z" finished-at="2018-12-12T06:14:30Z">
+      <class name="com.itest.testcases.Login_002_LoginSucessFuction_001_Test">
+        <test-method status="PASS" signature="startTest()[pri:0, instance:com.itest.testcases.Login_002_LoginSucessFuction_001_Test@5fece7]" name="startTest" is-config="true" duration-ms="13" started-at="2018-12-12T14:14:22Z" finished-at="2018-12-12T14:14:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="LoginSucessFuction_001()[pri:0, instance:com.itest.testcases.Login_002_LoginSucessFuction_001_Test@5fece7]" name="LoginSucessFuction_001" duration-ms="7864" started-at="2018-12-12T14:14:22Z" finished-at="2018-12-12T14:14:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginSucessFuction_001 -->
+      </class> <!-- com.itest.testcases.Login_002_LoginSucessFuction_001_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

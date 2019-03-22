@@ -1,0 +1,113 @@
+package com.itest.testcases.teacher;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.itest.testcases.bean.LoginBean;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.SeleniumUtil;
+
+
+
+/**
+ * 教师端首页导航栏
+ * @author 24431
+ *
+ */
+public class TeacherHome_001_HeaderIndex_Test {
+      static Logger logger=Logger.getLogger(TeacherHome_001_HeaderIndex_Test.class);
+      ITestContext itestContext=null;
+      WebDriver driver=null;
+      
+      @BeforeClass
+      public void beforeTest(ITestContext itestContext){
+        this.driver=new GetBorwser().getWebDriver();
+        this.itestContext=itestContext;
+        itestContext.setAttribute("SELENIUM_DRIVER", driver);
+        LogConfiguration.initLog(this.getClass().getSimpleName());
+      }
+      
+      @Test
+      public void headerIndex(){
+        SeleniumUtil seleniumUtil=new SeleniumUtil(driver);
+        LoginBean loginBean=new LoginBean();
+        String jsHandle=null;
+        //首页老师登录
+        loginBean.teacherLogin(driver);
+        seleniumUtil.pause(1000);
+        //点击立即创作标签
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div/a")).click();
+        seleniumUtil.pause(1000);
+        //判断是否拉起立即创作页面
+        System.out.println("student:"+loginBean.getNewHandle());
+        System.out.println("Home:"+loginBean.getCodingHomeHandle());
+        
+        for(String s:driver.getWindowHandles()){
+          System.out.println("[all:]"+s);
+        }
+        for(String s:driver.getWindowHandles()){
+          System.out.println("[页面的Handle]"+s);
+          if(s.equals(loginBean.getNewHandle())||s.equals(loginBean.getCodingHomeHandle())){
+            continue;
+          }else{
+            jsHandle=s;
+            driver.switchTo().window(s);
+            seleniumUtil.pause(2000);
+            break;
+          }
+        }
+        String  url=driver.getCurrentUrl();
+        if(!url.equals("https://coding.qq.com/js-editor/")){
+           logger.error("拉起立即创作失败");
+           Assert.fail("拉起立即创作失败");
+        }
+        seleniumUtil.pause(2000);
+        
+        driver.switchTo().window(loginBean.getNewHandle());
+        
+        
+        //点击头像下拉标签
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div/div[3]/div[2]/div[2]/div[1]/span/i")).click();
+        seleniumUtil.pause(1000);
+        //点击个人中心
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div/div[3]/div[2]/div[2]/div[2]/a[1]")).click();
+        for(String s:driver.getWindowHandles()){
+          if(s.equals(loginBean.getNewHandle())||s.equals(loginBean.getNewHandle())||s.equals(jsHandle)){
+            continue;
+          }else{
+            driver.switchTo().window(s);
+            seleniumUtil.pause(1000);
+          }
+        }
+        
+        String workUrl=driver.getCurrentUrl();
+        System.out.println("[workUrl]"+workUrl);
+        if(!workUrl.equals("https://coding.qq.com/personal/#/work")){
+          logger.error("[没有拉起个人中心]");
+          Assert.fail("[没有拉起个人中心]");
+        }
+        
+        driver.switchTo().window(loginBean.getNewHandle());
+        
+        //注销
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div/div[3]/div[2]/div[2]/div[2]/a[2]")).click();
+        if(!driver.getCurrentUrl().equals("https://coding.qq.com/campusSys/")){
+          logger.error("[注销没有返回到登录界面]");
+          Assert.fail("[注销没有返回到登录界面]");
+        }
+        
+        
+        
+        
+        
+        
+      }
+      
+      
+
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="driverConfgFilePath" value="config/driver.properties"/>
+  <listeners>
+    <listener class-name="com.itest.plugins.arrow.TestResultListener"/>
+  </listeners>
+  <test name="Coding(failed)">
+    <classes>
+      <class name="com.itest.testcases.personalCenter.PersonalCenter_001_Left_Test">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="leftHelp"/>
+        </methods>
+      </class> <!-- com.itest.testcases.personalCenter.PersonalCenter_001_Left_Test -->
+    </classes>
+  </test> <!-- Coding(failed) -->
+</suite> <!-- Failed suite [Suite] -->

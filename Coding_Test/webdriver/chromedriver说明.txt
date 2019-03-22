@@ -1,0 +1,2 @@
+chromedriver.exe版本号v2.41
+Chrome浏览器版本v68-69

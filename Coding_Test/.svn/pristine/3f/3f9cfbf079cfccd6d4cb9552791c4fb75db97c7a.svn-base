@@ -1,0 +1,236 @@
+package com.itest.testcases.teacher;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import org.apache.bcel.ExceptionConstants;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.itest.testcases.bean.LoginBean;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.LoginCookie;
+import com.itest.utils.SeleniumUtil;
+import com.jcraft.jsch.jce.Random;
+
+
+public class TeacherHome_002_LeftHelp_Test {
+
+  static Logger logger=Logger.getLogger(TeacherHome_002_LeftHelp_Test.class);
+  WebDriver driver=null;
+  ITestContext itestContext=null;
+  
+  @BeforeClass
+  public void  TeacherHome_002_LeftHelp_Test(ITestContext itestContext){
+    this.itestContext=itestContext;
+    this.driver=new GetBorwser().getWebDriver();
+    itestContext.setAttribute("SELENIUM_DRIVER", driver);
+    LogConfiguration.initLog(this.getClass().getSimpleName());
+        
+  }
+  @Test
+  public void LeftHelp(){
+    WebDriverWait wait =null;
+    SeleniumUtil seleniumUtil=new SeleniumUtil(driver);  
+    //自动登录
+    LoginCookie loginCookie=new LoginCookie();
+    loginCookie.getCookie(driver);
+    //点击校园
+    String homeHandle=driver.getWindowHandle();    
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/div[2]/a[3]")).click();
+    seleniumUtil.pause(1000);
+    for(String s:driver.getWindowHandles()){
+      System.out.println(s);
+      if(s.equals(homeHandle)){
+        continue;
+      }else{
+        driver.switchTo().window(s);
+        seleniumUtil.pause(1000);
+        break;
+
+      }
+    }   
+    
+    //点击课程中心标签    
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[1]/span/a")).click();    
+    List<WebElement> webElements=driver.findElements(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/ul/li[2]/ul/li"));   
+    for(WebElement e:webElements){
+      String className=e.getText();
+      System.out.println(className);
+      e.click();
+      //显示等待     
+      String centerClassName=driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div/div/div[1]/h3/span")).getText();
+      System.out.println(centerClassName);
+      if(!className.equals(centerClassName)){
+        logger.error("[点击班级：]"+className+"出现错误，名字核对错误");
+        Assert.fail("[点击班级：]"+className+"出现错误，名字核对错误");        
+      }
+      seleniumUtil.pause(500);
+    }
+    
+    //创建班级
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[2]/span/span/span/i")).click();
+    //点击班级名称输入框
+    try {
+     Thread.sleep(5000);      
+     WebElement web= driver.findElement(By.className("eui-input-original"));
+    } catch (InterruptedException e1) {
+      // TODO Auto-generated catch block
+      e1.printStackTrace();
+    } catch (NoSuchElementException nee){
+      logger.info("没有拿到元素");
+    }
+    driver.findElement(By.className("eui-input-original")).sendKeys("测试创建班级");
+    //点击选择课程
+    driver.findElement(By.className("eui-select-placeholder")).click();
+    
+    //遍历出“Python初级”课程,并选中点击
+    for(WebElement web:driver.findElements(By.className("eui-dropdown-list"))){        
+        if(web.getText().trim().contains("Python")){ 
+          logger.info("有Python这门课程");
+          web.click();
+        }
+    }
+      
+    seleniumUtil.pause(2000);
+    //点击创建班级按钮
+    driver.findElement(By.className("eui-dialog-btnok")).click();
+    seleniumUtil.pause(2000);
+    if(!driver.findElement(By.className("page-sider-wrapper")).getText().contains("测试创建班级")){
+      System.out.println(driver.findElement(By.className("page-sider-wrapper")).getText());
+      logger.info("创建班级失败了，提示创建成功，但是页面没有显示");
+      Assert.fail("创建班级失败了，提示创建成功，但是页面没有显示");
+    }
+    driver.navigate().refresh();
+    seleniumUtil.pause(2000);
+    
+    
+    
+    List<WebElement> classWebE=driver.findElements(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li"));     
+    String className="十四事";
+    boolean checkClass=true;
+    //重命名班级
+    while(checkClass){
+    //获取所有的班级WebElement
+      List<WebElement> cwe=driver.findElements(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li"));
+      logger.info("[size]"+cwe.size());
+      //将所有的班级名称装到classNameList,用例判断是否存在班级名称为checkClassName的班级
+      List<String> classNameList=new ArrayList<String>();
+      for(WebElement s:cwe){
+        //存进classNameList
+        classNameList.add(s.getText());
+      }
+      //是否包含checkClassName,不包含直接跳出
+      System.out.println(classNameList);
+      if(classNameList.contains(className)){
+      //包含就在做遍历，这里遍历的原因是为了找到具体的xpath值。因为删除按钮是相对路劲的xpath
+        
+        for(int i=0;i<cwe.size();i++){          
+          if(cwe.get(i).getText().trim().contains(className)){
+            System.out.println(className);
+            //点击展示checkClassName
+            cwe.get(i).click();
+            logger.info("有："+className);
+            //相对路劲的位置算法
+            int temp=i+1;            
+            String clickM="//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li["+temp+"]/span/a/div/div/div/i";            
+            try{
+              Thread.sleep(1000);
+              //点击展开删除和重命名展示框
+              driver.findElement(By.xpath(clickM)).click();              
+              int ranameNum=i+8;             
+              //删除标签相对路劲算法
+              String rename="/html/body/div["+ranameNum+"]/div/div/span[1]";
+              WebElement web=driver.findElement(By.xpath(rename));
+              //显示等待重命名标签能够点击
+              wait=new WebDriverWait(driver,3);
+              wait.until(ExpectedConditions.elementToBeClickable(web));          
+              web.click();  
+              //显示等待，删除确认框中删除按钮可点击
+              wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[2]/div/input")));          
+              driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[2]/div/input")).clear();
+              driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[2]/div/input")).sendKeys("测试创建");
+              wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[3]/div/a[2]")));
+              driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[3]/div/a[2]")).click();
+              
+              seleniumUtil.pause(2000);             
+            }catch (Exception Nee){
+              logger.error("元素加载失败");
+            }                
+            i=cwe.size();
+          }
+        }  
+      }else{
+        break;
+      }
+    }
+    seleniumUtil.pause(1000);
+    //添加班级班级，删除班级
+    String checkClassName="测试创建班级";
+    //进入循环，查看是否存在名称为checkClassName的班级，如果有就将其全部删除，没有就不做处理
+    while(checkClass){
+      //获取所有的班级WebElement
+      List<WebElement> cwe=driver.findElements(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li"));
+      logger.info("[size]"+cwe.size());
+      //将所有的班级名称装到classNameList,用例判断是否存在班级名称为checkClassName的班级
+      List<String> classNameList=new ArrayList<String>();
+      for(WebElement s:cwe){
+        //存进classNameList
+        classNameList.add(s.getText());
+      }
+      //是否包含checkClassName,不包含直接跳出
+      if(classNameList.contains(checkClassName)){
+      //包含就在做遍历，这里遍历的原因是为了找到具体的xpath值。因为删除按钮是相对路劲的xpath
+        for(int i=0;i<cwe.size();i++){          
+          if(cwe.get(i).getText().trim().contains(checkClassName)){
+            //点击展示checkClassName
+            cwe.get(i-1).click();
+            logger.info("有："+checkClassName);
+            //相对路劲的位置算法
+            int temp=i+1;            
+            String clickM="//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li["+temp+"]/span/a/div/div/div/i";            
+            try{
+              Thread.sleep(1000);
+              //点击展开删除和重命名展示框
+              driver.findElement(By.xpath(clickM)).click();              
+              int ranameNum=i+8;             
+              //删除标签相对路劲算法
+              String rename="/html/body/div["+ranameNum+"]/div/div/span[2]";
+              WebElement web=driver.findElement(By.xpath(rename));
+              //显示等待删除标签能够点击
+              wait=new WebDriverWait(driver,3);
+              wait.until(ExpectedConditions.elementToBeClickable(web)) ;          
+              web.click();  
+              //显示等待，删除确认框中删除按钮可点击
+              wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[5]/div/div[2]/div/div/div[2]/div/a[2]")));          
+              driver.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div/div[2]/div/a[2]")).click();              
+              seleniumUtil.pause(2000);             
+            }catch (Exception Nee){
+              logger.error("元素加载失败");
+            }                
+            i=cwe.size();
+          }
+        }  
+      }else{
+        break;
+      }
+    }
+    
+
+  }
+  
+}

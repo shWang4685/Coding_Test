@@ -1,0 +1,17 @@
+[2019-01-14 11:30:47] [INFO] login 测试用例始执行！
+[2019-01-14 11:30:47] [INFO] [读取到表格中用例的条数为]:1login
+[2019-01-14 11:30:51] [INFO] 打开测试页面：[https://dev.coding.qq.com/home/#/]
+[2019-01-14 11:31:10] [INFO] 点击元素 [[[ChromeDriver: chrome on XP (8cc29ec401f81178fbcc9f91fc0f16ea)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[3]/div/a]]
+[2019-01-14 11:31:11] [WARN] login 测试用例执行失败
+[2019-01-14 11:31:11] [ERROR] [2019_01_14_11_31_11_login] ,截图失败，原因：no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=69.0.3497.81)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-OQBROSA', ip: '192.168.71.108', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\24431\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62130}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.81, webStorageEnabled: true}
+Session ID: 8cc29ec401f81178fbcc9f91fc0f16ea
+[2019-01-14 11:31:11] [INFO] 执行失败的用 = HeaderIndex
+[2019-01-14 11:31:11] [INFO] 执行失败的用 = login

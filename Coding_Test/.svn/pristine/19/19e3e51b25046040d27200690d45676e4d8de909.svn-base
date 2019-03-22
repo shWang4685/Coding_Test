@@ -1,0 +1,63 @@
+package com.itest.testcases.teacher;
+
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import jxl.common.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import test.testng.webElements.teacher.CenterClass_Ele;
+import test.testng.webElements.teacher.CenterCurriculum_Ele;
+import test.testng.webElements.teacher.HeaderIndex_Ele;
+import com.itest.testcases.bean.LoginBean;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.LoginCookie;
+import com.itest.utils.SeleniumUtil;
+import com.itest.utils.SeleniumUtils;
+
+public class TeacherHome_003_Center_Test {
+  static Logger logger=Logger.getLogger(TeacherHome_002_LeftHelp_Test.class);
+  WebDriver driver=null;
+  ITestContext itestContext=null;
+  Set<String> handleSet=null;
+  CenterCurriculum_Ele centerCurriculum=null;
+  SeleniumUtils seleniumUtils=null;
+  
+  @BeforeClass
+  public void  TeacherHome_003_center_Test(ITestContext itestContext){
+    this.itestContext=itestContext;
+    this.driver=new GetBorwser().getWebDriver();
+    itestContext.setAttribute("SELENIUM_DRIVER", driver);
+    LogConfiguration.initLog(this.getClass().getSimpleName());   
+    this.handleSet=new TreeSet<>();
+    this.centerCurriculum=new CenterCurriculum_Ele(driver);
+    this.seleniumUtils=new SeleniumUtils(driver); 
+  }
+  @Test
+  public void LeftHelp(){
+    SeleniumUtil seleniumUtil=new SeleniumUtil(driver);
+    HeaderIndex_Ele headerInderElm=new HeaderIndex_Ele(driver);
+    //自动登录
+    LoginCookie loginCookie=new LoginCookie();
+    loginCookie.getCookie(driver);
+    //1.官网首页点击校园标签      
+    seleniumUtils.click(headerInderElm.school(), handleSet,"官网首页校园标签");
+    //2.校验页面中心是否展示 课程中心内容  
+    
+    if(driver.findElement(By.tagName("body")).getText().contains("你当前没有在授课")){
+      System.out.println("shshsh");
+    }else{
+      System.out.println("没有");
+    }
+
+  }
+}

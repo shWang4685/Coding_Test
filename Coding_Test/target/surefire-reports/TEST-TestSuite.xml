@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="1" name="TestSuite" time="27.721" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_144\jre\bin"/>
+    <property name="java.vm.version" value="25.144-b01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="$M2_HOME"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\24431\workspace\Coding_Test"/>
+    <property name="java.runtime.version" value="1.8.0_144-b01"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.io.tmpdir" value="C:\Users\24431\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\24431\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2496578151365271617.tmp"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files (x86)/Java/jre1.8.0_144/bin/client;C:/Program Files (x86)/Java/jre1.8.0_144/bin;C:/Program Files (x86)/Java/jre1.8.0_144/lib/i386;C:\Python27;D:\apache-maven-3.5.4\bin;C:\Python27\Scripts;%JAVA_HOME%\bin;C:\ProgramData\Oracle\Java\javapath;&quot;C:\Program Files (x86)\Intel\iCLS Client\;F:\adt4_2_32bit；F:\adt4_2_32bit\sdk;;:\adt4_2_32bit\sdk\platform-tools&quot;;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;F:\adt4_2_32bit\sdk\platform-tools;&quot;.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar&quot;;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;&quot;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;&quot;;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;F:\apache-tomcat\bin;C:\Program Files (x86)\Java\jre1.8.0_144;C:\Users\24431\AppData\Local\Microsoft\WindowsApps;C:\Users\24431\AppData\Local\Programs\Fiddler;C:\Users\24431\AppData\Roaming\npm;;D:\BaiduNetdiskDownload\软件测试框架selenium+java+testng+maven\eclipse-java-luna-SR2-win32\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\24431"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="user.name" value="24431"/>
+    <property name="java.class.path" value="D:\apache-maven-3.5.4\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.8.0_144\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -s D:\apache-maven-3.5.4\conf\settings.xml install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="1.8.0_144"/>
+    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_144\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="D:\apache-maven-3.5.4"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+  </properties>
+  <testcase classname="com.itest.testcases.CodingHome_002_HomeClick_001_Test" name="HomeClick_001" time="27.721">
+    <failure message="No frame element found by name or id _login_frame_quick_
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-OQBROSA&apos;, ip: &apos;192.168.71.108&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchFrameException">org.openqa.selenium.NoSuchFrameException: No frame element found by name or id _login_frame_quick_
+Build info: version: &apos;3.13.0&apos;, revision: &apos;2f0d292&apos;, time: &apos;2018-06-25T15:24:21.231Z&apos;
+System info: host: &apos;DESKTOP-OQBROSA&apos;, ip: &apos;192.168.71.108&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:881)
+	at com.itest.utils.SeleniumUtil.inFrame(SeleniumUtil.java:265)
+	at com.itest.buildTest.ActionFunction.action(ActionFunction.java:79)
+	at com.itest.buildTest.ActionFunction.actionFunction(ActionFunction.java:40)
+	at com.itest.testcases.CodingHome_002_HomeClick_001_Test.HomeClick_001(CodingHome_002_HomeClick_001_Test.java:32)
+</failure>
+    <system-out>--------------Coding--------------CodingHome_002_HomeClick_001_Test
+[2019-01-09 11:11:56] [INFO] HomeClick_001 测试用例始执行！
+[2019-01-09 11:11:56] [INFO] [读取到表格中用例的条数为]:0HomeClick_001
+一共多少行19
+[2019-01-09 11:11:56] [INFO] [该行为空，直接跳过]
+[2019-01-09 11:11:56] [INFO] [该行为空，直接跳过]
+[2019-01-09 11:11:56] [INFO] [该行为空，直接跳过]
+[2019-01-09 11:11:56] [INFO] [该行为空，直接跳过]
+[2019-01-09 11:11:56] [INFO] [该行为空，直接跳过]
+[2019-01-09 11:11:57] [INFO] 打开测试页面：[https://dev.coding.qq.com/home/#/]
+[2019-01-09 11:11:58] [INFO] 点击元素 [[[ChromeDriver: chrome on XP (6a24f41fa3c57724eaa1c10a6a60512a)] -&gt; xpath: //*[@id=&quot;app&quot;]/div/div/div/div[1]/div[2]/a[2]]]
+[checkStr]专注9-18岁
+[2019-01-09 11:12:07] [INFO] [进入了]https://dev.coding.qq.com/home/#/lesson    页面
+[2019-01-09 11:12:16] [INFO] [点击校园步骤出现了新的句柄]CDwindow-F0486E0252C4A965FE60A4DAB692B95F
+[2019-01-09 11:12:16] [INFO] [当前页面句柄为：CDwindow-F0486E0252C4A965FE60A4DAB692B95F]
+[2019-01-09 11:12:16] [INFO] 点击元素 [[[ChromeDriver: chrome on XP (6a24f41fa3c57724eaa1c10a6a60512a)] -&gt; xpath: //*[@id=&quot;app&quot;]/div/div/div/div[1]/div[2]/a[3]]]
+[2019-01-09 11:12:21] [INFO] 点击元素 [[[ChromeDriver: chrome on XP (6a24f41fa3c57724eaa1c10a6a60512a)] -&gt; xpath: //*[@id=&quot;app&quot;]/div/div[2]/div/div/div[1]/div/div[1]/img]]
+[2019-01-09 11:12:23] [WARN] HomeClick_001 测试用例执行失败
+[2019-01-09 11:12:23] [INFO] [2019_01_09_11_12_23_HomeClick_001] 截图成功，保存在[ ./result/screenshot/2019_01_09_11_12_23_HomeClick_001.jpg ]
+</system-out>
+    <system-err>log4j:WARN No appenders could be found for logger (com.itest.plugins.arrow.TestResultListener).
+log4j:WARN Please initialize the log4j system properly.
+Starting ChromeDriver 2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e) on port 13006
+Only local connections are allowed.
+一月 09, 2019 11:11:56 上午 org.openqa.selenium.remote.ProtocolHandshake createSession
+信息: Detected dialect: OSS
+</system-err>
+  </testcase>
+</testsuite>

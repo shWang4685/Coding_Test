@@ -1,0 +1,69 @@
+2019-03-14 14:17:05.815  INFO  --- [main] .onTestStart(TestResultListener.java:73)ogger{39} : LeftHelp 测试用例始执行！
+2019-03-14 14:17:07.760  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-14 14:17:07.820  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:07.830  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-14 14:17:07.839  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击官网首页校园标签
+2019-03-14 14:17:07.964  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (95c41bc1dba89bbbfdc64cce3813b6cb)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]]步骤出现了新的句柄]CDwindow-CE37E17B494061C60970D85642CCC9AF
+2019-03-14 14:17:07.972  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-CE37E17B494061C60970D85642CCC9AF]
+2019-03-14 14:17:07.972  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [官网首页校园标签]
+2019-03-14 14:17:09.160 ERROR  --- [main] ls.checkBodyText(SeleniumUtils.java:228)ogger{39} : [腾讯扣叮不存在]:你当前没有在授课
+2019-03-14 14:17:09.160  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，课程中心]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[1]/span/a
+2019-03-14 14:17:09.184  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:09.193  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，课程中心]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[1]/span/a
+2019-03-14 14:17:09.202  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击课程中心
+2019-03-14 14:17:09.251  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [课程中心]
+2019-03-14 14:17:09.251  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源列表]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div
+2019-03-14 14:17:09.282  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:09.288  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源列表]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div
+2019-03-14 14:17:09.301  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[1]/div/a
+2019-03-14 14:17:09.327  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:09.332  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[1]/div/a
+2019-03-14 14:17:09.345  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车我的课程能否点击
+2019-03-14 14:17:09.566  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车我的课程能否点击]
+2019-03-14 14:17:11.848  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[2]/div/a
+2019-03-14 14:17:11.878  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:11.885  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[2]/div/a
+2019-03-14 14:17:11.896  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车我的课程能否点击
+2019-03-14 14:17:12.037  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车我的课程能否点击]
+2019-03-14 14:17:14.216  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[3]/div/a
+2019-03-14 14:17:14.260  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:14.282  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[3]/div/a
+2019-03-14 14:17:14.297  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车我的课程能否点击
+2019-03-14 14:17:14.511  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车我的课程能否点击]
+2019-03-14 14:17:16.650  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[4]/div/a
+2019-03-14 14:17:16.677  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:16.686  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [我的课程，只有一个课程的时候使用]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/div/div[4]/div/a
+2019-03-14 14:17:16.696  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车我的课程能否点击
+2019-03-14 14:17:16.867  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车我的课程能否点击]
+2019-03-14 14:17:19.042  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源列表]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div
+2019-03-14 14:17:19.070  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:19.079  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源列表]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div
+2019-03-14 14:17:19.094  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[1]/div/a
+2019-03-14 14:17:19.121  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:19.128  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[1]/div/a
+2019-03-14 14:17:19.139  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车课程资源能否点击
+2019-03-14 14:17:19.254  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车课程资源能否点击]
+2019-03-14 14:17:21.382  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[2]/div/a
+2019-03-14 14:17:21.412  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:21.420  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[2]/div/a
+2019-03-14 14:17:21.430  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车课程资源能否点击
+2019-03-14 14:17:21.557  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车课程资源能否点击]
+2019-03-14 14:17:23.684  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[3]/div/a
+2019-03-14 14:17:23.711  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:23.719  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[3]/div/a
+2019-03-14 14:17:23.729  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车课程资源能否点击
+2019-03-14 14:17:23.839  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车课程资源能否点击]
+2019-03-14 14:17:26.032  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[4]/div/a
+2019-03-14 14:17:26.088  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:26.106  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[4]/div/a
+2019-03-14 14:17:26.125  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车课程资源能否点击
+2019-03-14 14:17:26.277  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车课程资源能否点击]
+2019-03-14 14:17:28.452  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[5]/div/a
+2019-03-14 14:17:28.479  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-14 14:17:28.486  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程资源tab,一个个读取]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[2]/div/div[5]/div/a
+2019-03-14 14:17:28.498  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击检车课程资源能否点击
+2019-03-14 14:17:28.610  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [检车课程资源能否点击]
+2019-03-14 14:17:31.721  INFO  --- [main] nTestSuccess(TestResultListener.java:67)ogger{39} : LeftHelp 测试用例执行成功!
+2019-03-14 14:17:31.742  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = headerIndex
+2019-03-14 14:17:31.742  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = LeftHelp
+2019-03-14 14:17:31.743  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = LeftHelp

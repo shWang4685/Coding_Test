@@ -1,0 +1,325 @@
+package com.itest.utils;
+
+import java.util.List;
+import java.util.Set;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+
+/**
+ * 数据类型的selenium帮助类
+ * @author 24431
+ *
+ */
+public class SeleniumUtils {
+    static Logger logger=Logger.getLogger(SeleniumUtils.class);
+    
+    static WebDriver driver;
+            
+    public SeleniumUtils(WebDriver driver) {
+      this.driver = driver;
+    }
+    
+    /**
+     * 通过PositioningMethod （定位方式）获得WebElement
+     * @param pM
+     *        定位方式
+     * @param 
+     *        定位元素String    
+     * @param
+     *        元素监测超时时间
+     * @return
+     */
+    public static WebElement getWebElementByPositioningMethod(String pM,String locationEle,int timeOut,String explain){
+        WebElement webElement=null;
+        
+        //定位方式 xpath ,name,className,id,class,css,linktext,tagname        
+        switch(pM){
+          case "name":  
+            waitForElementToLoad(timeOut,By.name(locationEle),explain);
+            webElement=findElementBy(By.name(locationEle));
+            break;
+          case "xpath":
+            waitForElementToLoad(timeOut,By.xpath(locationEle),explain);
+
+            webElement=findElementBy(By.xpath(locationEle));
+            break;
+          case "className":           
+            waitForElementToLoad(timeOut,By.className(locationEle),explain);
+            webElement=findElementBy(By.className(locationEle));
+            break;
+          case "id":  
+            waitForElementToLoad(timeOut,By.id(locationEle),explain);
+            webElement= findElementBy(By.id(locationEle));                             
+            break;
+          case "linkText":  
+            waitForElementToLoad(timeOut,By.linkText(locationEle),explain);
+            webElement=findElementBy(By.linkText(locationEle));
+            break;
+          case "tagName":
+            waitForElementToLoad(timeOut,By.tagName(locationEle),explain);
+            webElement=findElementBy(By.tagName(locationEle));
+            break;          
+          default:
+              //testng的断言
+              logger.error("你选择的定位方式：["+pM+"] 不被支持!");
+              Assert.fail("你选择的定位方式：["+pM+"] 不被支持!");              
+            break;
+        }
+        return webElement;
+      
+    }
+    /**
+     * 查找元素集合的方法
+     * @param by
+     * @return
+     */
+    public List<WebElement> findElementsBy(int timeOut,By by,String explain){
+        waitForElementToLoad(timeOut,by,explain);
+        return driver.findElements(by);
+        
+    }
+    /**
+     * 自定义显示等待，在给定的时间内去查找元素，如果没找到则超时，抛出异常
+     * @param timeOut
+     *         超出时间
+     * @param By
+     * @param explain
+     *      元素注释
+     */
+    public static void waitForElementToLoad(int timeOut, final By By,String explain) {
+        logger.info("开始查找元素[" +explain+ "]"+ By );
+        try {
+            (new WebDriverWait(driver, timeOut)).until(new ExpectedCondition<Boolean>() {
+                public Boolean apply(WebDriver driver) {
+                    WebElement element = driver.findElement(By);
+                    logger.info(element.isDisplayed());
+                    return element.isDisplayed();
+                }
+                
+            });
+        } catch (TimeoutException e) {
+            logger.error("超时!! " + timeOut + " 秒之后还没找到元素 [" + explain + "]"+ By);
+            Assert.fail("超时!! " + timeOut + " 秒之后还没找到元素 [" + explain + "]"+ By);
+        }
+        logger.info("找到了元素 [" + explain + "]"+ By);
+    }
+    
+    
+    /**
+     * 查找元素的方法
+     * @param by
+     * @return
+     */
+    public static WebElement findElementBy(By by) {
+        return driver.findElement(by);
+    }
+        
+    /**
+     * 包装点击操作，该方法自动定位最新的句柄页
+     * @param element
+     *          点击元素
+     * @param handleSet
+     *          句柄存储
+     * @param explain
+     * 
+     */
+    public void click(WebElement element,Set<String>  handleSet,String explain) {
+      
+        try {
+          //点击前，获取当前页面的句柄
+          String winHandleAtNow=driver.getWindowHandle();
+          //将句柄存进去，这里是去重复的
+          handleSet.add(winHandleAtNow);
+          logger.info("[操作：]开始执行点击"+explain);
+          
+          //点击方法
+          element.click();
+         // clickTheClickable(element, System.currentTimeMillis(), 2500);
+          //判断一下是否有新的句柄出现
+          Set<String> allHandle=driver.getWindowHandles();
+          for(String str1:allHandle){
+              if(handleSet.contains(str1)){
+                //没有出现新的句柄
+                continue;
+              }else{           
+                logger.info("["+element+"步骤出现了新的句柄]"+str1);
+                //定位到新句柄driver
+                //如果拉起新的页面，就将句柄定位到该页面
+                driver.switchTo().window(str1);
+                logger.info("[当前页面句柄为："+driver.getWindowHandle()+"]");
+              }
+          }                       
+        } catch (StaleElementReferenceException e) {
+            logger.error("The element you clicked:[" + explain + "] is no longer exist!");
+            Assert.fail("The element you clicked:[" + explain + "] is no longer exist!");
+        } catch (Exception e) {
+            logger.error("Failed to click element [" + explain + "]");
+            Assert.fail("Failed to click element [" + explain + "]",e);
+        }
+        logger.info("点击元素 [" + explain + "]");
+    }
+    
+
+    
+    /**
+     * 后退方法包装
+     */
+    public  void back() {
+        driver.navigate().back();
+    }
+    
+    /**
+     * 关闭当前窗口，如果浏览器是当前打开的最后一个窗口，则退出浏览器。 
+     */
+    public static  void close() {
+        driver.close();
+    }
+    
+    /**
+     * 关闭除当前窗口以外其它窗口
+     */
+    public void closeOther(){
+      //获取当前页面的句柄
+      String winHandleAtNow=driver.getWindowHandle();
+      //获得所有窗口句柄
+      Set<String> allHandle=driver.getWindowHandles();
+      for(String str:allHandle){
+        if(str.equals(winHandleAtNow)){
+          continue;
+        }else{
+          driver.switchTo().window(str);
+          close();
+        }
+      }
+      driver.switchTo().window(winHandleAtNow);
+      
+    }
+    
+    /**
+     * 判断页面是否存在文本xxx，尽做拉起新窗口验证
+     */
+    public void   isTextPresent(String what){
+        if(!driver.findElement(By.tagName("body")).getText().contains(what)){
+          logger.error("["+driver.getTitle()+"不存在]:"+what);
+          logger.error("[校验："+driver.getTitle()+"失败]");
+          Assert.fail("["+driver.getTitle()+"不存在]:"+what+"[校验："+driver.getTitle()+"失败]");
+        }
+        // 遍历body节点下的所有节点 取其文本值 并判断是否包含 文本 what                      
+    }
+    
+    /**
+     *  遍历body节点下的所有节点 取其文本值 并判断是否包含 文本 what  
+     * @param what
+     * @return
+     *          boolean
+     */
+    public boolean checkBodyText(String what){
+      if(!driver.findElement(By.tagName("body")).getText().contains(what)){
+        logger.error("["+driver.getTitle()+"不存在]:"+what);
+        return false;
+      }
+      return true;
+      
+    }
+    /**
+     * 检测元素是否显示
+     * @param element
+     * @return
+     */
+    public boolean isDisplayed (WebElement element) {
+        boolean isDisplaye=false;        
+        if(element.isEnabled()) {
+            String textN=element.getText();
+            logger.info("这个元素：["+textN+"]["+getLocatorByElement(element,">")+"]有显示");
+            isDisplaye=true;
+        }else if(element.isEnabled()==false) {
+            logger.warn("这个元素：["+getLocatorByElement(element,">")+"]不显示,校验失败");
+            isDisplaye=false;
+        }
+        return isDisplaye;
+    }
+    
+    /**
+     * 根据元素来获取此元素的定位值
+     * @param element
+     * @param expectText
+     *          
+     * @return
+     */
+    private String getLocatorByElement(WebElement element,String expectText) {
+        String text=element.toString();
+       
+        String expect=null;
+        try {
+            expect=text.substring(text.indexOf(expectText)+1,text.length()+-1);
+        }catch (Exception e) {
+            e.printStackTrace();
+            logger.error("没有找到字符串：["+expectText+"]");
+        }
+        
+        return expect;            
+    }
+    
+    /**
+     * 
+     * @param sleepTime
+     *          暂停时间
+     * 暂停当前用例执行时间，暂停时间为sleepTime
+     */
+    public  void pause(int sleepTime) {
+        if(sleepTime<=0) {
+            return ;
+        }
+        try {
+            Thread.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
+
+    /**
+     * 向input text中输入
+     * @param element
+     * @param sendString
+     */
+    public void sendKeys(WebElement element, String sendString) {
+      Actions actions = new Actions(driver);
+      actions.moveToElement(element);
+      actions.click();
+      logger.info("点击了输入框");
+      actions.sendKeys(sendString);
+      actions.build().perform();
+      pause(500);
+    }
+    
+    /**
+     * 清楚元素内容
+     * @param web
+     * @param explain
+     *          注释
+     */
+    public void clear(WebElement web,String explain){
+      try {
+        web.clear();
+      } catch (Exception e) {
+          logger.error("清除元素 [" + explain + "] 上的内容失败!");
+      }
+      logger.info("清除元素 [" + explain  + "]上的内容");
+    }
+    
+    
+
+    
+}

@@ -1,0 +1,2 @@
+  如果使用继承获得 WebDriver ,那么测试中就不能关闭浏览器，关闭了浏览器后WebDriver就会为not session。 再衔接下面的用例就会报webDriver 找不到
+ 因为虚拟机 只执行一次  GetBorwser static内容 ，就算GetBorwser实例化了，也不会再执行

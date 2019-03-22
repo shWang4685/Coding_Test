@@ -1,0 +1,98 @@
+package com.itest.testcases.teacher;
+
+import java.util.List;
+import jxl.common.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.itest.testcases.bean.LoginBean;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.SeleniumUtil;
+
+public class TeacherHome_003_Center_Test {
+  static Logger logger=Logger.getLogger(TeacherHome_002_LeftHelp_Test.class);
+  WebDriver driver=null;
+  ITestContext itestContext=null;
+  
+  @BeforeClass
+  public void  TeacherHome_003_center_Test(ITestContext itestContext){
+    this.itestContext=itestContext;
+    this.driver=new GetBorwser().getWebDriver();
+    itestContext.setAttribute("SELENIUM_DRIVER", driver);
+    LogConfiguration.initLog(this.getClass().getSimpleName());
+        
+  }
+  @Test
+  public void LeftHelp(){
+    SeleniumUtil seleniumUtil=new SeleniumUtil(driver);
+    //登录页面
+    LoginBean login=new LoginBean();
+    //教师登录
+    login.teacherLogin(driver);
+    //点击课程中心标签    
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/ul/li[2]/ul/li[1]")).click();
+
+    //展开课程中心页面后，逐个点击课程tab
+    driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/ul/li[1]/span/a")).click();
+    //点击资源课程
+
+    seleniumUtil.pause(2000);
+    List<WebElement> webElementsClass=driver.findElements(By.className("eui-card-item"));
+
+    System.out.println(webElementsClass.size());
+    
+    for(WebElement e:webElementsClass){
+      //一次点击资源，看能不能拉起
+      System.out.println(e.getText());
+      e.click();
+      seleniumUtil.back();
+      seleniumUtil.pause(1000);
+      
+    }
+    
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e1) {
+      // TODO Auto-generated catch block
+      e1.printStackTrace();
+    }
+    
+    try{
+      WebDriverWait wait = new WebDriverWait(driver, 3);
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/ul/li[2]/ul/li")));
+      
+      
+    }catch(TimeoutException no){
+      System.out.println("进来了");
+      logger.error("没有加载出来元素1");
+      Assert.fail("没有加载出来元素");
+    }
+    //点击班级
+    List<WebElement> webElements=driver.findElements(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/ul/li[2]/ul/li"));   
+    System.out.println(webElements.size());
+    for(WebElement e:webElements){
+      String className=e.getText();
+      e.click();
+      //显示等待     
+      String centerClassName=driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div/div/div[1]/h3/span")).getText();
+      
+      if(!className.equals(centerClassName)){
+        logger.error("[点击班级：]"+className+"出现错误，名字核对错误");
+        Assert.fail("[点击班级：]"+className+"出现错误，名字核对错误");        
+      }
+      seleniumUtil.pause(500);
+    }
+    
+
+    
+    
+  }
+}

@@ -1,0 +1,6 @@
+[2018-11-20 16:59:50] [INFO] [seleniumUtil的地址：]https://tapd.tencent.com/ptlogin/ptlogins/login?ref=http%3A%2F%2Fitest.tencent.com%2Fv2%2Fpassport%2Fcheck&site=ITEST
+[2018-11-20 16:59:50] [INFO] 清除元素 [[[ChromeDriver: chrome on XP (9d97323d76e8c1f08547fcf89d601e7b)] -> xpath: //*[@id='username']]]上的内容
+[2018-11-20 16:59:50] [INFO] 点击了输入框
+[2018-11-20 16:59:53] [INFO] 清除元素 [[[ChromeDriver: chrome on XP (9d97323d76e8c1f08547fcf89d601e7b)] -> xpath: //*[@id='password_input']]]上的内容
+[2018-11-20 16:59:53] [INFO] 点击了输入框
+[2018-11-20 16:59:58] [INFO] [用户的名称：][t_wshwang_ex]

@@ -1,0 +1,47 @@
+package com.itest.testcases;
+
+import java.util.Set;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.SeleniumUtil;
+
+public class GodWang_Test {
+  static Logger logger=Logger.getLogger(CodingHome_002_HomeClick_001_Test.class);
+  ITestContext testContext=null;
+  WebDriver driver=null;
+  @BeforeClass
+  public void startTest(ITestContext context){
+
+      this.driver=new GetBorwser().getWebDriver();
+      this.testContext=context;
+      testContext.setAttribute("SELENIUM_DRIVER",driver);
+      LogConfiguration.initLog(this.getClass().getSimpleName());
+  }
+  @Test
+  public void HomeClick_001(){
+      SeleniumUtil seleniumUtil=new SeleniumUtil(driver);
+      //打开登录页面
+      seleniumUtil.openUrl("https://pvp.qq.com/");
+      System.out.println("[登录页面的句柄]"+driver.getWindowHandle());           
+      driver.findElement(By.xpath("//*[@id=\"unlogin\"]/div/a")).click();
+      //点击首页的登录标签后，要将首页隐藏的div窗口设置成block，才可以对打开的div窗口进行元素定位
+      
+      //因为点击了登录标签，浏览器中的页面Elements虽然改变了，但是此时jvm虚拟机并没有更新状态
+     // String js1 = "document.getElementById('login_select').style.display='block';";
+     // ((JavascriptExecutor)driver).executeScript(js1);    
+      seleniumUtil.pause(5000);         
+      driver.findElement(By.xpath("//*[@id=\"qqlogin\"]")).click();
+
+      driver.switchTo().frame("loginIframe");
+      driver.findElement(By.xpath("//*[@id=\"switcher_plogin\"]")).click();
+    
+      
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="driverConfgFilePath" value="config/driver.properties"/>
+  <listeners>
+    <listener class-name="com.itest.plugins.arrow.TestResultListener"/>
+  </listeners>
+  <test name="Test1(failed)">
+    <classes>
+      <class name="test.CodingHome_002_HomeClick_001_Test">
+        <methods>
+          <include name="HomeClick_001"/>
+          <include name="startTest"/>
+        </methods>
+      </class> <!-- test.CodingHome_002_HomeClick_001_Test -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

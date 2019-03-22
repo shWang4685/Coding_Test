@@ -1,0 +1,360 @@
+package com.itest.testcases.teacher;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import test.testng.webElements.teacher.HeaderIndex_Ele;
+import test.testng.webElements.teacher.LeftHelp_Ele;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.LoginCookie;
+import com.itest.utils.SeleniumUtils;
+
+public class TeacherHome_002_LeftHelp_Test {
+    static Logger logger=Logger.getLogger(TeacherHome_002_LeftHelp_Test.class);
+
+    //设置上下文
+    ITestContext itestContext=null;
+    WebDriver driver=null;
+    //存句柄使用
+    Set<String> handleSet=null;
+    LeftHelp_Ele leftHelp_Ele =null;
+    SeleniumUtils seleniumUtils=null;
+    @BeforeClass
+    public void beforeTest(ITestContext itestContext){
+      
+      this.driver=new GetBorwser().getWebDriver();
+      this.itestContext=itestContext;
+      itestContext.setAttribute("SELENIUM_DRIVER", driver);
+      this.leftHelp_Ele=new LeftHelp_Ele(driver);
+      //定义一个存句柄的数组,主要为了点击事件
+      this.handleSet=new TreeSet<>();
+      this.seleniumUtils=new SeleniumUtils(driver); 
+      LogConfiguration.initLog(this.getClass().getSimpleName());
+    }
+    
+    @Test
+    public void LeftHelp(){
+      //创建测试班级的名称
+      String className="测试创建班级";
+      //创建班级的课程
+      String CurriculumName="python编程基础与应用";
+      //修改班级名称的内容
+      String rename="测试重命名输入";
+      //页面元素初始化      
+      HeaderIndex_Ele headerInderElm=new HeaderIndex_Ele(driver);
+
+      //自动登录
+      LoginCookie loginCookie=new LoginCookie();
+      logger.info("开始添加登录cookie");
+      loginCookie.getCookie(driver);
+      
+      //1.官网首页点击校园标签      
+      seleniumUtils.click(headerInderElm.school(), handleSet,"官网首页校园标签");
+      //2.校验页面中心是否展示 课程中心内容  
+      seleniumUtils.isDisplayed(leftHelp_Ele.MyCourseOnCenter());
+      
+      if(seleniumUtils.checkBodyText("你当前没有在授课")){
+        logger.info("1.请检查是否有创建班级，未创建班级,班级列表为空");
+        seleniumUtils.pause(2000);        
+        bulidClassByNone(className,CurriculumName);
+      //5.重命名班级
+        ranameClassNone(className, rename);
+        //6.需要删除的班级名称
+        String deleteStr="测试重命名输入";
+        deleteClassNone(deleteStr);
+      }else{
+        //3.点击班级后，核对是否拉起对应班级
+        List<WebElement> webElements=leftHelp_Ele.allClass();;      
+        checkClassName(webElements,driver);
+        bulidClass(webElements,className,CurriculumName);
+        //5.重命名班级
+        ranameClass(className,rename);
+        //6.需要删除的班级名称
+        String deleteStr="测试重命名输入";
+        deleteClass(deleteStr);
+
+      }                                 
+     
+    }  
+    
+    /**
+     * 当该教师已经创建过班级时，调用该方法创建班级
+     * @param webElements
+     *          已经创建的班级列表
+     * @param className
+     *          将要创建的班级名称
+     *  @param CurriculumName
+     *          将要创建的班级课程名称
+     */
+    public void bulidClass(List<WebElement> webElements, String className,String CurriculumName){
+      //4.创建班级
+      seleniumUtils.click(leftHelp_Ele.buildClass(), handleSet, "教师端创建班级");      
+      seleniumUtils.pause(2000);
+
+      //leftHelp_Ele.classNameInput传入参数是因为xpath 是动态
+      seleniumUtils.sendKeys(leftHelp_Ele.classNameInput(webElements.size()+8),className);
+      seleniumUtils.pause(2000);
+
+      //点击课程选择下拉框
+      seleniumUtils.click(leftHelp_Ele.selectCurriculumInput(webElements.size()+8), handleSet, "创建班级窗口，课程选择框");
+      //查看下拉框中是否有某课程，有就创建，没有就提出错误
+      boolean bool=false;    
+      WebElement webCurriculum=null;
+
+      for(WebElement web:leftHelp_Ele.allCurriculum(webElements.size()+8)){
+    
+        if(web.getText().trim().contains(CurriculumName)){ 
+          System.out.println(web);
+          logger.info("有["+CurriculumName+"]这门课程");
+          webCurriculum=web;
+          bool=true;
+          break;
+        }
+       
+      }     
+      if(bool){
+        webCurriculum.click();
+      }else{
+        logger.error("无["+CurriculumName+"]这门课程,不能选中，请检查创建的课程名称参数");
+        Assert.fail("无["+CurriculumName+"]这门课程,不能选中，请检查创建的课程名称参数");
+      }
+      seleniumUtils.click(leftHelp_Ele.confirmBuildClass(webElements.size()+8), handleSet, "确认创建班级");       
+      //因创建班级，页面构造发生了变化
+      driver.navigate().refresh();
+    }
+    
+    
+    
+    public void bulidClassByNone(String className,String CurriculumName){
+      //4.创建班级
+      seleniumUtils.click(leftHelp_Ele.buildClass(), handleSet, "教师端创建班级");      
+      seleniumUtils.pause(2000);
+      
+      seleniumUtils.sendKeys(leftHelp_Ele.classNameInput(7), className);
+      
+      seleniumUtils.click(leftHelp_Ele.selectCurriculumInput(7), handleSet, "创建班级窗口，课程选择框");
+      //查看下拉框中是否有某课程，有就创建，没有就提出错误
+      boolean bool=false;    
+      WebElement webCurriculum=null;
+
+      for(WebElement web:leftHelp_Ele.allCurriculum(7)){   
+        if(web.getText().trim().contains(CurriculumName)){ 
+          logger.info("有["+CurriculumName+"]这门课程");
+          webCurriculum=web;
+          bool=true;
+          break;
+        }       
+      } 
+      if(bool){
+        webCurriculum.click();
+      }else{
+        logger.error("无["+CurriculumName+"]这门课程,不能选中，请检查创建的课程名称参数");
+        Assert.fail("无["+CurriculumName+"]这门课程,不能选中，请检查创建的课程名称参数");
+      }
+      seleniumUtils.click(leftHelp_Ele.confirmBuildClass(7), handleSet, "确认创建班级");       
+      //因创建班级，页面构造发生了变化
+      driver.navigate().refresh(); 
+      seleniumUtils.pause(1000);
+    }
+    
+    /**
+     * 
+     * @param className
+     *          需要修改的班级（班级名称）
+     * @param rename
+     *          修改内容
+     */
+    public void ranameClass(String  className,String rename){      
+      List<WebElement> webEs=leftHelp_Ele.allClass();  
+
+        for(int i=0;i<webEs.size();i++){
+          if(webEs.get(i).getText().contains(className)){              
+            seleniumUtils.click(webEs.get(i), handleSet, "点击班级");
+            seleniumUtils.click(leftHelp_Ele.divHelp(i+1), handleSet, "点击左侧班级菜单按钮，准备重命名");
+            seleniumUtils.pause(1000);            
+            seleniumUtils.click(leftHelp_Ele.reName(i+8), handleSet, "动态定位重命名标签使用的下标");
+            seleniumUtils.click(leftHelp_Ele.reNameInput(), handleSet, "重命名输入框");
+            seleniumUtils.clear(leftHelp_Ele.reNameInput(),"重命名输入框");
+            seleniumUtils.sendKeys(leftHelp_Ele.reNameInput(),rename);
+            seleniumUtils.click(leftHelp_Ele.confirmReNameButton(), handleSet, "确认重命名");   
+            seleniumUtils.pause(1000);
+            if(leftHelp_Ele.getOneClass(i+1).getText().contains(rename)){
+              logger.info("重命名成功");
+            }else{
+              Assert.fail("重命名失败");
+            }
+            
+          }
+        }
+      
+    }
+    
+    /**
+     * 没有在页面创建新的班级的时候使用/没有创建任何班级的时候
+     * @param className
+     *          需要修改的班级（班级名称）
+     * @param rename
+     *          修改内容
+     */
+    public void ranameClassNone(String  className,String rename){      
+      List<WebElement> webEs=leftHelp_Ele.allClass();  
+
+        for(int i=0;i<webEs.size();i++){
+          if(webEs.get(i).getText().contains(className)){              
+            seleniumUtils.click(webEs.get(i), handleSet, "点击班级");
+            seleniumUtils.click(leftHelp_Ele.divHelp(i+1), handleSet, "点击左侧班级菜单按钮，准备重命名");
+            seleniumUtils.pause(1000);            
+            seleniumUtils.click(leftHelp_Ele.reName(i+6), handleSet, "动态定位重命名标签使用的下标");
+            seleniumUtils.click(leftHelp_Ele.reNameInput(), handleSet, "重命名输入框");
+            seleniumUtils.clear(leftHelp_Ele.reNameInput(),"重命名输入框");
+            seleniumUtils.sendKeys(leftHelp_Ele.reNameInput(),rename);
+            seleniumUtils.click(leftHelp_Ele.confirmReNameButton(), handleSet, "确认重命名");   
+            seleniumUtils.pause(1000);
+            if(leftHelp_Ele.getOneClass(i+1).getText().contains(rename)){
+              logger.info("重命名成功");
+            }else{
+              Assert.fail("重命名失败");
+            }
+            
+          }
+        }
+      
+    }
+    
+    
+    
+//    public void deleteClass(String deleteClassName){
+//     // driver.navigate().refresh();
+//      List<WebElement> webEs=leftHelp_Ele.allClass();
+//      System.out.println("外面的哪个size:---------"+webEs.size());
+//      for(int i=0;i<webEs.size();i++){
+//        if(webEs.get(i).getText().contains(deleteClassName)){
+//          System.out.println("里面的i:---------"+i);
+//          seleniumUtils.click(webEs.get(i), handleSet, "点击班级");
+//          seleniumUtils.pause(1000);
+//          seleniumUtils.click(leftHelp_Ele.divHelp(i+1), handleSet, "点击左侧班级菜单按钮，准备删除");
+//          seleniumUtils.pause(1000);         
+//          seleniumUtils.click(leftHelp_Ele.deleteClass(i+8), handleSet, "动态定位删除班级标签使用的下标");
+//          seleniumUtils.click(leftHelp_Ele.confirmDelete(), handleSet, "确认删除该班级");
+//          driver.navigate().refresh();
+//          //删除成功后，虚拟机记录的webEs 大小还是原来的大小，因此这里是要重新赋值的
+//          webEs=leftHelp_Ele.allClass();
+//          System.out.println("里面的哪个size:---------"+webEs.size());
+//          deleteClass(deleteClassName);  
+//        }
+//      }
+//    }
+    /**
+     * 删除班级，创建新班级后使用
+     * @param deleteClassName
+     */
+    public void deleteClass(String deleteClassName){  
+      boolean bool=true;
+      while(bool){
+        List<WebElement> webEs=leftHelp_Ele.allClass();
+        //将所有的班级名称存到List中
+        List<String> classNames=new ArrayList<String>();
+        for(WebElement web:webEs){
+          classNames.add(web.getText());
+        }
+        //如果List中没有deleteClassName ,如果没有就跳出循环
+        if(!classNames.contains(deleteClassName)){
+          bool=false;
+          break;
+        }
+ 
+        
+        for(int i=0;i<webEs.size();i++){
+          if(webEs.get(i).getText().contains(deleteClassName)){
+            seleniumUtils.click(webEs.get(i), handleSet, "点击班级");
+            seleniumUtils.pause(1000);
+            seleniumUtils.click(leftHelp_Ele.divHelp(i+1), handleSet, "点击左侧班级菜单按钮，准备删除");
+            seleniumUtils.pause(1000);         
+            seleniumUtils.click(leftHelp_Ele.deleteClass(i+8), handleSet, "动态定位删除班级标签使用的下标");
+            seleniumUtils.click(leftHelp_Ele.confirmDelete(), handleSet, "确认删除该班级");
+            driver.navigate().refresh();
+            break;
+          }
+
+        }                                    
+      }                    
+    }
+    
+    /**
+     * 没有在页面创建新的班级的时候使用/没有创建任何班级的时候
+     * @param deleteClassName
+     */
+    public void deleteClassNone(String deleteClassName){  
+      boolean bool=true;
+      while(bool){
+        List<WebElement> webEs=leftHelp_Ele.allClass();
+        //将所有的班级名称存到List中
+        List<String> classNames=new ArrayList<String>();
+        for(WebElement web:webEs){
+          classNames.add(web.getText());
+        }
+        //如果List中没有deleteClassName ,如果没有就跳出循环
+        if(!classNames.contains(deleteClassName)){
+          bool=false;
+          break;
+        }
+        //如果只有一个班级的时候
+        if(classNames.contains(deleteClassName)&& webEs.size()==1){
+          bool=false;
+        }
+
+        for(int i=0;i<webEs.size();i++){
+          if(webEs.get(i).getText().contains(deleteClassName)){
+            seleniumUtils.click(webEs.get(i), handleSet, "点击班级");
+            seleniumUtils.pause(1000);
+            seleniumUtils.click(leftHelp_Ele.divHelp(i+1), handleSet, "点击左侧班级菜单按钮，准备删除");
+            seleniumUtils.pause(1000);         
+            seleniumUtils.click(leftHelp_Ele.deleteClass(i+6), handleSet, "动态定位删除班级标签使用的下标");
+            seleniumUtils.click(leftHelp_Ele.confirmDelete(), handleSet, "确认删除该班级");
+            driver.navigate().refresh();
+            break;
+          }
+        }                                    
+      }                    
+    }
+    
+    
+    
+    
+    /**
+     * 校验班级是否能够拉起
+     * @param webElements
+     */
+    public static  void checkClassName(List<WebElement> webElements,WebDriver driver){
+      LeftHelp_Ele leftHelp_Ele =new LeftHelp_Ele(driver);
+      for(WebElement e:webElements){
+        String className=e.getText();
+        e.click();
+        try {
+          Thread.sleep(500);
+        } catch (InterruptedException e1) {
+          // TODO Auto-generated catch block
+          e1.printStackTrace();
+        }
+        //显示等待    
+        
+        String centerClassName=leftHelp_Ele.centerClassName().getText();
+        
+        if(!className.contains(centerClassName)){
+          logger.error("[点击班级：]"+className+"出现错误，名字核对错误");
+          Assert.fail("[点击班级：]"+className+"出现错误，名字核对错误");        
+        }
+        logger.info("["+centerClassName+"]："+"校对成功");
+      }
+    }
+}

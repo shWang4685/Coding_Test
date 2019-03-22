@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="driverConfgFilePath" value="config/driver.properties"/>
+  <test name="Test2(failed)">
+    <classes>
+      <class name="com.itest.utils.LoginPage_002_LoginSuccessFuntion_Test">
+        <methods>
+          <include name="loginSuccessFunction"/>
+          <include name="startTest"/>
+        </methods>
+      </class> <!-- com.itest.utils.LoginPage_002_LoginSuccessFuntion_Test -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

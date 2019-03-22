@@ -1,0 +1,89 @@
+package com.itest.testcases.codingHome;
+
+import java.util.Set;
+import java.util.TreeSet;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.itest.utils.GetBorwser;
+import com.itest.utils.LogConfiguration;
+import com.itest.utils.SeleniumUtil;
+
+/**
+ * 验证官网打开，课程标签点击，校园标签点击，立即创作点击
+ * @author 24431
+ *
+ */
+public class CodingHome_001_HeaderIndex_Test {
+      static Logger logger=Logger.getLogger(CodingHome_001_HeaderIndex_Test.class);
+      //设置一个上下文来存浏览器驱动,在监听器中使用到
+      ITestContext testContext=null;
+      WebDriver driver=null;
+
+      @BeforeClass
+      public void startTest(ITestContext testContext){
+        this.testContext=testContext;
+        this.driver=new GetBorwser().getDriver();
+        testContext.setAttribute("SELENIUM_DRIVER", driver);
+
+        LogConfiguration.initLog(this.getClass().getSimpleName());
+      }
+      
+      @Test
+      public void HeaderIndex(){
+        Set<String> handleSet=new TreeSet<>(); 
+        SeleniumUtil seleniumUtil =new SeleniumUtil(driver);
+        String webDriver= driver.getWindowHandle();
+        String loginDriver=null;
+        //打开官网首页链接
+        seleniumUtil.openUrl("https://coding.qq.com/home/#/");
+
+        //点击课程标签       
+        seleniumUtil.click(seleniumUtil.findElementBy(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/div[2]/a[2]")));
+        try {
+          Thread.sleep(500);
+          //验证是否打开页面
+          seleniumUtil.isTextPresent("专注9-18岁青少年计算思维培养");
+          //点击校园标签
+          driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/a[3]")).click();
+                   
+         Set<String> webDrivers=driver.getWindowHandles();         
+         for(String s:webDrivers){
+           if(s.equals(webDriver)){
+             continue;
+           }else{
+             loginDriver=s;
+             driver.switchTo().window(s);
+           }
+         }
+         Thread.sleep(500);
+         
+         seleniumUtil.isTextPresent("账号登录");    
+         driver.switchTo().window(webDriver);
+         //点击立即创作
+         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/a")).click();
+         System.out.println(driver.getWindowHandles().size());         
+
+         
+         for(String s:driver.getWindowHandles()){
+           if(s.equals(webDriver)||s.equals(loginDriver)){
+             continue;
+           }else{
+             driver.switchTo().window(s);
+           }
+         }
+        
+         seleniumUtil.isTextPresent("保存");
+         driver.quit();
+        } catch (InterruptedException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }             
+      }
+      
+}

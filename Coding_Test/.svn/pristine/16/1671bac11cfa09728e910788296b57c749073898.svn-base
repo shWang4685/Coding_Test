@@ -1,0 +1,874 @@
+package com.itest.utils;
+
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import lazy.test.ui.controls.Text;
+import org.apache.bcel.ExceptionConstants;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.Listeners;
+
+
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import com.itest.buildTest.TestShepBean;
+
+
+
+
+
+public class SeleniumUtil {
+  static Logger logger=Logger.getLogger(SeleniumUtil.class) ;
+  static WebDriver driver=null;
+  
+  
+  
+  public SeleniumUtil(WebDriver driver) {
+    this.driver = driver;
+  }
+  
+  
+  //----------------------------新----------------------------------------------
+  /**
+   * 通过PositioningMethod （定位方式）获得WebElement
+   * @param testShepBean
+   *        用例步骤实体
+   * @return
+   */
+  public static WebElement getWebElementByPositioningMethod(TestShepBean testShepBean){
+    WebElement webElement=null;
+      //定位方式 xpath ,name,className,id,class,css,linktext,tagname
+      String positioningMethod=testShepBean.getPositioningMethod();
+      
+      switch(positioningMethod){
+
+        case "name":
+          
+          webElement=findElementBy(By.name(testShepBean.getWebElementName()));
+          break;
+        case "xpath":
+          webElement=findElementBy(By.xpath(testShepBean.getWebElementName()));              
+          break;
+        case "className":
+          webElement=findElementBy(By.className(testShepBean.getWebElementName()));
+          break;
+        case "id":          
+          webElement= findElementBy(By.id(testShepBean.getWebElementName()));
+          if(webElement==null){
+            System.out.println("[根本没有拿到By]");
+          }else{
+            System.out.println("[if id]");
+          }
+          //WebElement webElement=(WebElement)byElement;    
+          
+          //System.out.println("[文案获取]"+webElement.toString());                    
+          
+          break;
+        case "linkText":          
+          webElement=findElementBy(By.linkText(testShepBean.getWebElementName()));
+          break;
+        case "tagName":
+          webElement=findElementBy(By.tagName(testShepBean.getWebElementName()));
+          break;          
+        default:
+            //testng的断言
+            Assert.fail("你选择的定位方式：["+positioningMethod+"] 不被支持!");
+            logger.error("你选择的定位方式：["+positioningMethod+"] 不被支持!");
+          break;
+      }
+      return webElement;
+    
+  }
+
+
+  /**
+   * 向input text中输入
+   * @param element
+   * @param sendString
+   */
+  public void sendKeys(WebElement element, String sendString) {
+    Actions actions = new Actions(driver);
+    actions.moveToElement(element);
+    actions.click();
+    logger.info("点击了输入框");
+    actions.sendKeys(sendString);
+    actions.build().perform();
+    pause(500);
+  }
+  
+  /**
+   * 向input text中输入
+   * @param testShepBean
+   *        传入用例操作步骤实体 
+   *
+   */
+  public void sendKeys(TestShepBean testShepBean) {
+       WebElement element=getWebElementByPositioningMethod(testShepBean);
+      try {
+        element.sendKeys(testShepBean.getDataTest());
+    } catch (Exception e) {
+        e.printStackTrace();      
+    }
+    logger.info("输入：[" + testShepBean.getDataTest() + "] 到 [" + element + "]");
+
+  }
+  
+  /**
+   * 包装清除操作
+   * */
+  
+  public void clear(TestShepBean testShepBean){
+    WebElement webElement=(WebElement)getWebElementByPositioningMethod(testShepBean);
+    try {
+      webElement.clear();
+    } catch (Exception e) {
+        logger.error("清除元素 [" + webElement + "] 上的内容失败!");
+    }
+    logger.info("清除元素 [" + webElement  + "]上的内容");
+     
+  }
+  
+  /**
+   * 字符对比
+   * @param testShepBean
+   */
+  public void TextContrast (TestShepBean testShepBean){
+
+    WebElement webElement=getWebElementByPositioningMethod(testShepBean);
+
+    //WebElement webElement=(WebElement)getWebElementByPositioningMethod(testShepBean);
+
+    //String textStr=webElement.getText().trim();
+    
+    String checkStr=testShepBean.getDataTest().trim();
+    System.out.println("[checkStr1]"+checkStr);
+    String textStr =webElement.getText().trim() ;    
+    System.out.println("[checkStr]"+textStr);
+    if(textStr.equals(checkStr)){
+      logger.info("[进入了]"+driver.getCurrentUrl()+"    页面");
+    }else{      
+      logger.error("你校对的["+driver.getCurrentUrl()+"页面]内容：["+textStr+"]不正确");
+      Assert.fail("你校对的["+driver.getCurrentUrl()+"页面]内容：["+textStr+"]不正确");
+    }
+  }
+
+  
+  
+  
+  /**
+   * 后退方法包装
+   */
+  public  void back() {
+      driver.navigate().back();
+  }
+  
+  
+  /**
+   * 关闭当前窗口，如果浏览器是当前打开的最后一个窗口，则退出浏览器。 
+   */
+  public void close() {
+      driver.close();
+  }
+  
+  /**
+   * 
+   * @param sleepTime
+   *          暂停时间
+   * 暂停当前用例执行时间，暂停时间为sleepTime
+   */
+  public  void pause(int sleepTime) {
+      if(sleepTime<=0) {
+          return ;
+      }
+      try {
+          Thread.sleep(sleepTime);
+      } catch (InterruptedException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+      }
+  }
+  
+  /**
+   * 包装点击操作
+   * */
+  public void click(TestShepBean testShepBean,Set<String>  handleSet) {
+     WebElement element=getWebElementByPositioningMethod(testShepBean);
+      try {
+        //点击前，获取当前页面的句柄
+        String winHandleAtNow=driver.getWindowHandle();
+        //将句柄存进去，这里是去重复的
+        handleSet.add(winHandleAtNow);
+        //点击方法
+        clickTheClickable(element, System.currentTimeMillis(), 2500);
+        //判断一下是否有新的句柄出现
+        Set<String> allHandle=driver.getWindowHandles();
+        for(String str1:allHandle){
+            if(handleSet.contains(str1)){
+              //没有出现新的句柄
+              continue;
+            }else{           
+              logger.info("["+testShepBean.getShepDescribe()+"步骤出现了新的句柄]"+str1);
+              //定位到新句柄driver
+              //如果拉起新的页面，就将句柄定位到该页面
+              driver.switchTo().window(str1);
+              logger.info("[当前页面句柄为："+driver.getWindowHandle()+"]");
+            }
+        }                       
+      } catch (StaleElementReferenceException e) {
+          logger.error("The element you clicked:[" + element + "] is no longer exist!");
+          Assert.fail("The element you clicked:[" + element + "] is no longer exist!");
+      } catch (Exception e) {
+          logger.error("Failed to click element [" + element + "]");
+          Assert.fail("Failed to click element [" + element + "]",e);
+      }
+      logger.info("点击元素 [" + element + "]");
+  }
+  /** 不能点击时候重试点击操作 */
+  private void clickTheClickable(WebElement element, long startTime, int timeOut) throws Exception {
+      try {
+        WebDriverWait wait=new WebDriverWait(driver,5);        
+        wait.until(ExpectedConditions.elementToBeClickable((By)element));
+        element.click();
+      } catch (Exception e) {
+          if (System.currentTimeMillis() - startTime > timeOut) {
+              logger.warn(element+ " is unclickable");
+              throw new Exception(e);
+          } else {
+              Thread.sleep(500);
+              logger.warn(element + " is unclickable, try again");
+              clickTheClickable(element, startTime, timeOut);
+          }
+      }
+  }
+  
+
+  /**
+   * 切换frame - 根据String类型（frame名字）
+   * */
+  public void inFrame(String frameId) {
+      driver.switchTo().frame(frameId);
+  }
+
+  /**
+   * 切换窗口以后，回滚到原来定位的元素
+   */
+  public void rollback(WebElement myLink){
+    JavascriptExecutor scroll = (JavascriptExecutor) driver;
+    scroll.executeScript("arguments[0].scrollIntoView();", myLink);
+  }
+  
+ 
+  /**
+   *  判定元素是否被加载完，点击前使用；等待元素加载
+   * @param testShepBean
+   */
+  protected void waitForElement(TestShepBean testShepBean) { 
+    for (int second = 0;; second++) { 
+     if (second >= 5) { 
+      logger.debug("Element:" + testShepBean.getShepDescribe()
+        + " can't be found after 60 seconds"); 
+      Assert.fail("find element timeout: " + testShepBean.getShepDescribe());      
+     } 
+     try { 
+       getWebElementByPositioningMethod(testShepBean);
+       break; 
+     } catch (Exception e) { 
+      logger.debug("Element:" + testShepBean.getShepDescribe()
+        + " can't be found in 60 seconds"); 
+      assert (false); 
+     } 
+     pause(1000); 
+    } 
+   }
+  
+  /**
+   * 判断页面是否存在文本xxx
+   */
+  public boolean isTextPresent(String what){
+    try{
+      if(!driver.findElement(By.tagName("body")).getText().contains(what)){
+        logger.error("["+driver.getTitle()+"不存在]:"+what);
+        Assert.fail("["+driver.getTitle()+"不存在]:"+what);
+      }
+      // 遍历body节点下的所有节点 取其文本值 并判断是否包含 文本 what
+      return driver.findElement(By.tagName("body")).getText().contains(what);
+      
+    }catch (Exception e){
+      // 没有该文本 则 返回 false
+//      ITestContext itestContext=null;
+//      WebDriver driver=(WebDriver)itestContext.getAttribute("SELENIUM_DRIVER");
+//      logger.error("["+driver.getTitle()+"不存在]:"+what);
+//      Assert.fail("["+driver.getTitle()+"不存在]:"+what);
+      return false;
+    }
+  }
+  
+  
+  /**
+   * 检查元素是否可用
+   * @param element
+   * @return
+   */
+  public boolean isEnabled (WebElement element) {
+      boolean isEnable=false;
+      if(element.isEnabled()) {
+          logger.info("这个元素：["+getLocatorByElement(element,">")+"]可以使用");
+          isEnable=true;
+      }else if(element.isEnabled()==false) {
+          logger.warn("这个元素：["+getLocatorByElement(element,">")+"]不可以使用");
+          isEnable=false;
+      }
+      return isEnable;
+  }
+  
+  /**
+   * 检测元素是否显示
+   * @param element
+   * @return
+   */
+  public boolean isDisplayed (WebElement element) {
+      boolean isDisplaye=false;
+      if(element.isEnabled()) {
+          logger.info("这个元素：["+getLocatorByElement(element,">")+"]有显示");
+          isDisplaye=true;
+      }else if(element.isEnabled()==false) {
+          logger.warn("这个元素：["+getLocatorByElement(element,">")+"]不显示");
+          isDisplaye=false;
+      }
+      return isDisplaye;
+  }
+  //----------------------------新----------------------------------------------
+  /**
+   * 获得元素 属性的文本
+   * */
+  public String getAttributeText(WebElement element, String attribute) {
+    return element.getAttribute(attribute).trim();
+
+  }  
+  /**
+   * 启动浏览器
+   */
+  public void launchBrowser() {
+    GetBorwser   getBorwser=new GetBorwser();
+    
+  }
+  // 登录窗口-IP
+  public void openUrl(String url) {
+    driver.get(url);
+    logger.info("打开测试页面：["+url+"]");
+    driver.manage().window().maximize();
+              
+  }
+    
+  
+
+
+
+  /**
+   * 退出此驱动程序，关闭每个关联窗口。
+   */
+  public void quit() {
+      driver.quit();
+  }
+  /**
+   * 页面刷新包装
+   */
+  public void refresh() {
+      driver.navigate().refresh();
+      logger.info("页面刷新成功");
+  }
+
+
+  /**
+   * 前进方法包装
+   */
+  public void foward() {
+      driver.navigate().forward();
+  }
+  /**
+   * 获得页面标题
+   */
+  public String  getTitle() {
+       return driver.getTitle();
+  }
+
+  /**
+   * 查找元素的方法
+   * @param by
+   * @return
+   */
+  public static WebElement findElementBy(By by) {
+      return driver.findElement(by);
+  }
+  
+  
+  /**
+   * 查找元素集合的方法
+   * @param by
+   * @return
+   */
+  public List<WebElement> findElementsBy(By by){
+      return driver.findElements(by);
+      
+  }
+  /**
+   * 从查找的元素集合中  定位到一个元素
+   * @param bys
+   * @param by
+   * @param index
+   * @return
+   */
+  public WebElement  getOneElement(By bys,By by,int index) {
+      return  findElementsBy(bys).get(index).findElement(by);
+  }
+  
+  
+  
+  
+  /**
+   * 根据元素来获取此元素的定位值
+   * @param element
+   * @param expectText
+   *          
+   * @return
+   */
+  public String getLocatorByElement(WebElement element,String expectText) {
+      String text=element.toString();
+      String expect=null;
+      try {
+          expect=text.substring(text.indexOf(expectText)+1,text.length()+-1);
+      }catch (Exception e) {
+          e.printStackTrace();
+          logger.error("没有找到字符串：["+expectText+"]");
+      }
+      
+      return expect;
+      
+      
+  }
+  
+  /**
+   * 获得当前select选择的值
+   * */
+  public List<WebElement> getCurrentSelectValue(By by){
+      List<WebElement> options = null;
+      Select s = new Select(driver.findElement(by));
+          options =  s.getAllSelectedOptions();
+          return options;
+  }
+  
+  /**
+   * 包装selenium模拟鼠标操作 - 鼠标移动到指定元素
+   * */
+  public void mouseMoveToElement(WebElement element) {
+      Actions builder = new Actions(driver);
+      Actions mouse = builder.moveToElement(element);
+      mouse.perform();
+  }
+  /**
+   * 包装selenium模拟鼠标操作 - 鼠标右击
+   * */
+  public void mouseRightClick(By element) {
+      Actions builder = new Actions(driver);
+      Actions mouse = builder.contextClick(findElementBy(element));
+      mouse.perform();
+  }
+  
+  /**
+   * 检测元素是否被选中
+   * @param element
+   * @return
+   */
+  public boolean isSelected (WebElement element) {
+      boolean flag=false;
+      if(element.isSelected()==true) {
+          logger.info("这个元素：["+getLocatorByElement(element,">")+"]被选中了");
+          flag=true;
+      }else if(element.isSelected()==false) {
+          logger.info("这个元素：["+getLocatorByElement(element,">")+"]没有被选中了");
+          flag=false;
+      }
+      
+      return flag;
+  }
+  
+  /** 检查checkbox是不是勾选 */
+  public boolean isCheckboxSelected(By elementLocator) {
+      if (findElementBy(elementLocator).isSelected() == true) {
+          logger.info("CheckBox: " + getLocatorByElement(findElementBy(elementLocator), ">") + " 被勾选");
+          return true;
+      } else
+          logger.info("CheckBox: " + getLocatorByElement(findElementBy(elementLocator), ">") + " 没有被勾选");
+      return false;
+
+  }
+  
+  /**
+   * 在给定的时间内去查找元素，如果没找到则超时，抛出异常
+   * */
+  public void waitForElementToLoad(int timeOut, final By By) {
+      logger.info("开始查找元素[" + By + "]");
+      try {
+          (new WebDriverWait(driver, timeOut)).until(new ExpectedCondition<Boolean>() {
+
+              public Boolean apply(WebDriver driver) {
+                  WebElement element = driver.findElement(By);
+                  return element.isDisplayed();
+              }
+          });
+      } catch (TimeoutException e) {
+          logger.error("超时!! " + timeOut + " 秒之后还没找到元素 [" + By + "]");
+          Assert.fail("超时!! " + timeOut + " 秒之后还没找到元素 [" + By + "]");
+
+      }
+      logger.info("找到了元素 [" + By + "]");
+  }
+  
+  
+  /**
+   * 获得输入框的值 这个方法 是针对某些input输入框 没有value属性，但是又想取得input的 值得方法
+   * */
+  public String getInputValue(String chose,String choseValue) {
+      String value = null;
+      switch(chose.toLowerCase()){
+      case "name":
+           String jsName = "return document.getElementsByName('"+choseValue+"')[0].value;"; //把JS执行的值 返回出去
+           value = (String)((JavascriptExecutor) driver).executeScript(jsName);
+           break;
+          
+      case "id":
+           String jsId = "return document.getElementById('"+choseValue+"').value;"; //把JS执行的值 返回出去
+           value = (String)((JavascriptExecutor) driver).executeScript(jsId);
+           break;
+      
+          default:
+              logger.error("未定义的chose:"+chose);
+              Assert.fail("未定义的chose:"+chose);        
+      }
+      return value;
+
+  }
+
+  /** 获得CSS value */
+  public String getCSSValue(WebElement e, String key) {
+
+      return e.getCssValue(key);
+  }
+  
+  /**
+   * 获得元素 属性的文本
+   * */
+  public String getAttributeText(By elementLocator, String attribute) {
+      return driver.findElement(elementLocator).getAttribute(attribute).trim();
+  }  
+
+  // 封装一个点击方法
+  public void click(WebElement element) {
+    try {
+      int i = 1;
+      while (true) {
+        if (i > 10) {
+          logger.error("！！等待元素10秒超时，执行点击操作失败。");          
+          break;
+        }
+        if (element.isDisplayed() && element.isEnabled()) {// 下拉框的场景要等显示可见。按钮被其他透明层遮住要等待可点击。
+          element.click();
+          Thread.sleep(500);
+          break;
+        } else {
+          logger.error("等待元素" + getByValueOfelement(element)
+              + " isDisplayed(显示)并且isEnabled(可点击)失败，继续等待1秒");
+
+          Thread.sleep(1000);
+          i++;
+        }
+      }
+
+    } catch (WebDriverException e) {// 解决org.openqa.selenium.WebDriverException: unknown error: is
+                                    // not clickable at point (303, 100). Other element would
+                                    // receive the click
+      pause(500);
+      waitPageLoaded();
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      logger.error("！！执行点击元素操作，失败。");
+
+      // screenShot();
+      // System.out.println(driver.getPageSource());
+      e.printStackTrace();
+    }
+  }
+  
+  // 获取元素的定位方式对应的值xpath=value
+  public String getByValueOfelement(WebElement webelement) {
+    if (webelement != null) {
+      String a = webelement.toString();
+      String[] b = a.split("-> ");
+      String[] c = b[1].split(": ");
+      String ByValue = c[1].substring(0, c[1].length() - 1);// 去掉最后的"]"
+      return ByValue;
+    } else {
+      return "元素为空！";
+    }
+  }
+  
+  
+
+  
+  
+  /**
+   * 添加cookies,做自动登陆的必要方法
+   * */
+  public void addCookies(int sleepTime) {
+      System.out.println("ss");
+      pause(sleepTime);
+      Set<Cookie> cookies = driver.manage().getCookies();
+      for (Cookie c : cookies) {
+          System.out.println(c.getName() + "->" + c.getValue());
+          if (c.getName().equals("platform")) {
+              Cookie cook = new Cookie(c.getName(), c.getValue());
+              driver.manage().addCookie(cook);
+              System.out.println(c.getName() + "->" + c.getValue());
+              System.out.println("添加成功");
+          } else {
+              System.out.println("没有找到logisticSessionid");
+          }
+
+      }
+
+  }
+  
+  // webdriver中可以设置很多的超时时间
+  /** implicitlyWait。识别对象时的超时时间。过了这个时间如果对象还没找到的话就会抛出NoSuchElement异常 */
+  public void implicitlyWait(int timeOut) {
+      driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
+  }
+
+  /** setScriptTimeout。异步脚本的超时时间。webdriver可以异步执行脚本，这个是设置异步执行脚本脚本返回结果的超时时间 */
+  public void setScriptTimeout(int timeOut) {
+      driver.manage().timeouts().setScriptTimeout(timeOut, TimeUnit.SECONDS);
+  }    
+  
+  /** 获得屏幕的分辨率 - 宽 */
+  public static double getScreenWidth() {
+      return java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+  }
+  
+  /**
+   * 上传文件，需要点击弹出上传照片的窗口才行
+   * 
+   * @param brower
+   *            使用的浏览器名称
+   * @param file
+   *            需要上传的文件及文件名
+   */
+  public void handleUpload(String browser, File file) {
+      String filePath = file.getAbsolutePath();
+      String executeFile = "res/script/autoit/Upload.exe";
+      String cmd = "\"" + executeFile + "\"" + " " + "\"" + browser + "\"" + " " + "\"" + filePath + "\"";
+      try {
+          Process p = Runtime.getRuntime().exec(cmd);
+          p.waitFor();
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+  }
+
+
+  /**
+   * 执行JavaScript 方法
+   * */
+  public void executeJS(String js) {
+      ((JavascriptExecutor) driver).executeScript(js);
+      logger.info("执行JavaScript语句：[" + js + "]");
+  }        
+
+  /**
+   * 执行JavaScript 方法和对象
+   * 用法：seleniumUtil.executeJS("arguments[0].click();", seleniumUtil.findElementBy(MyOrdersPage.MOP_TAB_ORDERCLOSE));
+   * */
+  public void executeJS(String js, Object... args) {
+      ((JavascriptExecutor) driver).executeScript(js, args);
+      logger.info("执行JavaScript语句：[" + js + "]");
+  }
+  
+  /**
+   * 选择下拉选项 -根据value
+   * */
+  public void selectByValue(By by, String value) {
+      Select s = new Select(driver.findElement(by));
+      s.selectByValue(value);
+  }
+
+  /**
+   * 选择下拉选项 -根据index角标
+   * */
+  public void selectByIndex(By by, int index) {
+      Select s = new Select(driver.findElement(by));
+      s.selectByIndex(index);
+  }
+
+  /**
+   * 选择下拉选项 -根据文本内容
+   * */
+  public void selectByText(By by, String text) {
+      Select s = new Select(driver.findElement(by));
+      s.selectByVisibleText(text);
+  }
+
+  /** 跳出frame */
+  public void outFrame() {
+      driver.switchTo().defaultContent();
+  }
+  
+
+  /**
+   * 切换frame - 根据页面元素定位
+   * */
+  public void switchFrame(WebElement element) {
+      try {
+          logger.info("正在跳进frame:[" + getLocatorByElement(element, ">") + "]");
+          driver.switchTo().frame(element);
+      } catch (Exception e) {
+          logger.info("跳进frame: [" + getLocatorByElement(element, ">") + "] 失败");
+          Assert.fail("跳进frame: [" + getLocatorByElement(element, ">") + "] 失败");
+      }
+      logger.info("进入frame: [" + getLocatorByElement(element, ">") +"]成功 ");
+  }
+  
+  /**
+   * 模拟键盘操作的,比如Ctrl+A,Ctrl+C等 参数详解：<br>
+   * 1、WebElement element - 要被操作的元素 <br>
+   * 2、Keys key- 键盘上的功能键 比如ctrl ,alt等 <br>
+   * 3、String keyword - 键盘上的字母
+   * */
+  public void pressKeysOnKeyboard(WebElement element, Keys key, String keyword) {
+
+      element.sendKeys(Keys.chord(key, keyword));
+  }
+
+
+  // 等待页面加载完成
+  public void waitPageLoaded() {
+    DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // 显示的格式
+    String startTime = sdf.format(new Date());
+
+    // 等待HTML文档加载完成
+    try {
+      String jQuery = "$(document).ready(function(){})";
+      ((JavascriptExecutor) driver).executeScript(jQuery);
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+    }
+
+    try {
+      String js = "window.onload=function(){}";
+      ((JavascriptExecutor) driver).executeScript(js);
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
+    try {
+      // 出现全屏加载
+      // 判断某个元素是否不存在于DOM或不可见
+      By by =
+          By.xpath("//div[@class='el-loading-mask is-fullscreen el-loading-fade-leave el-loading-fade-leave-active']");
+      new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(by));
+
+      // 局部元素加载(客户名称的工商信息查询)
+      By by1 =
+          By.xpath("//div[@class='el-loading-mask el-loading-fade-enter-active el-loading-fade-enter-to']");
+      By by2 =
+          By.xpath("//div[@class='el-loading-mask el-loading-fade-leave-active el-loading-fade-leave-to']");
+
+      new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(by1));
+      new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(by2));
+
+      // 解决class属性值不停变化
+      List<WebElement> loading =
+          driver.findElements(By.xpath("//div[@class='el-loading-spinner']/.."));
+      for (WebElement ele : loading) {
+        while (!ele.getAttribute("class").equals("el-loading-mask")) {
+          pause(500);
+          System.out.println("找到下标为" + loading.indexOf(ele) + "的元素的class属性值不等于'el-loading-mask'");
+        }
+      }
+
+      // 局部元素加载(显示加载的圈圈)
+      // <div class="el-loading-mask" style="display: none;">
+      List<WebElement> E = driver.findElements(By.xpath("//div[@class='el-loading-mask']"));
+      for (WebElement ele : E) {// 如果页面中有多个加载样式
+        int j = 1;
+        while (ele.isDisplayed()) {
+          if (j > 60) {
+            System.err.println("！！等待元素30秒超时，等待页面加载失败。");
+            break;
+          }
+          pause(500);
+          j++;
+        }
+      }
+
+      // 追加1秒等待时间
+      pause(1000);
+
+    } catch (StaleElementReferenceException e) {
+      // TODO Auto-generated catch block
+      pause(500);// 解决class属性值不停变化
+      waitPageLoaded();
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      System.err.println("等待加载的圈圈消失.....！！页面加载超时失败！！");
+      // System.out.println("执行driver.getPageSource() 返回页面源码");
+      // System.out.println(driver.getPageSource());
+      e.printStackTrace();
+    }
+
+    String endTime = sdf.format(new Date());
+    try {
+      Date d1 = sdf.parse(startTime);
+      Date d2 = sdf.parse(endTime);
+      long diff = d2.getTime() - d1.getTime();
+      long waitTime = diff / 1000;
+      System.out.println("等待页面加载完成，消耗" + waitTime + "秒");
+    } catch (ParseException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
+  }
+  
+  /**
+   * 获得页面地址
+   * @return
+   */
+  public String getUrl(){
+    String url=driver.getCurrentUrl();
+    return url;
+    
+  }
+}

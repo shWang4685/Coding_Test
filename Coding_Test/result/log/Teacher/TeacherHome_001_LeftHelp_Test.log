@@ -1,0 +1,170 @@
+2019-03-05 10:54:07.694  INFO  --- [main] .onTestStart(TestResultListener.java:73)ogger{39} : LeftHelp 测试用例始执行！
+2019-03-05 10:54:07.701 ERROR  --- [main] p(TeacherHome_001_LeftHelp_Test.java:51)ogger{39} : 开始表演
+2019-03-05 10:54:07.702  INFO  --- [main] p(TeacherHome_001_LeftHelp_Test.java:54)ogger{39} : 开始添加登录cookie
+2019-03-05 10:54:09.558  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-05 10:54:09.600  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:09.607  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-03-05 10:54:09.622  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击官网首页校园标签
+2019-03-05 10:54:09.708  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:155)ogger{39} : [[[ChromeDriver: chrome on XP (14a73f7647bd4e37df9544f830fb4665)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]]步骤出现了新的句柄]CDwindow-4700004CD00473CB3DD32F4294E1AD20
+2019-03-05 10:54:09.720  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:159)ogger{39} : [当前页面句柄为：CDwindow-4700004CD00473CB3DD32F4294E1AD20]
+2019-03-05 10:54:09.720  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [官网首页校园标签]
+2019-03-05 10:54:09.720  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[课程详情页，我的课程 文案]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/h2
+2019-03-05 10:54:10.776  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:10.784  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [课程详情页，我的课程 文案]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/h2
+2019-03-05 10:54:10.815  INFO  --- [main] tils.isDisplayed(SeleniumUtils.java:229)ogger{39} : 这个元素：[我的课程][ xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/h2]有显示
+2019-03-05 10:54:10.816  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:10.844  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:10.851  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:11.461  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[班级详情，课程名称]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/h3/span
+2019-03-05 10:54:11.488  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:11.496  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [班级详情，课程名称]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/h3/span
+2019-03-05 10:54:11.520  INFO  --- [main] (TeacherHome_001_LeftHelp_Test.java:195)ogger{39} : [飒飒飒飒]：校对成功
+2019-03-05 10:54:12.089  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[班级详情，课程名称]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/h3/span
+2019-03-05 10:54:12.107  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:12.115  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [班级详情，课程名称]By.xpath: //*[@id="app"]/div/div/div[1]/div[3]/div/div/div[1]/h3/span
+2019-03-05 10:54:12.134  INFO  --- [main] (TeacherHome_001_LeftHelp_Test.java:195)ogger{39} : [测试创建班级]：校对成功
+2019-03-05 10:54:12.135  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，创建班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/span/span/span/i
+2019-03-05 10:54:12.164  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:12.171  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，创建班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/span/span/span/i
+2019-03-05 10:54:12.183  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击教师端创建班级
+2019-03-05 10:54:12.237  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [教师端创建班级]
+2019-03-05 10:54:14.237  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[创建班级窗口，班级名称输入框]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[2]/div/div[1]/div/div/input
+2019-03-05 10:54:14.276  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:14.283  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [创建班级窗口，班级名称输入框]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[2]/div/div[1]/div/div/input
+2019-03-05 10:54:14.303  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:287)ogger{39} : 点击了输入框
+2019-03-05 10:54:16.877  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[创建班级窗口，课程选择框]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[2]/div/div[2]/div/div/div/div
+2019-03-05 10:54:16.903  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:16.911  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [创建班级窗口，课程选择框]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[2]/div/div[2]/div/div/div/div
+2019-03-05 10:54:16.922  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击创建班级窗口，课程选择框
+2019-03-05 10:54:16.962  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [创建班级窗口，课程选择框]
+2019-03-05 10:54:16.962  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[创建班级窗口，课程选择框，所有课程名称]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/div/ul/li
+2019-03-05 10:54:16.989  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:16.997  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [创建班级窗口，课程选择框，所有课程名称]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[2]/div/div[2]/div/div/div[2]/div/ul/li
+2019-03-05 10:54:17.044  INFO  --- [main] p(TeacherHome_001_LeftHelp_Test.java:88)ogger{39} : 有[python编程基础与应用]这门课程
+2019-03-05 10:54:17.082  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[确认创建班级按钮]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[3]/div/a
+2019-03-05 10:54:17.107  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:17.114  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [确认创建班级按钮]By.xpath: /html/body/div[10]/div/div[2]/div/div/div[3]/div/a
+2019-03-05 10:54:17.124  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击确认创建班级
+2019-03-05 10:54:17.163  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [确认创建班级]
+2019-03-05 10:54:17.337  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:17.364  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:17.372  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:17.419  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击班级
+2019-03-05 10:54:17.478  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击班级]
+2019-03-05 10:54:17.478  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div/div/div/i
+2019-03-05 10:54:17.505  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:17.513  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div/div/div/i
+2019-03-05 10:54:17.521  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击左侧班级菜单按钮，准备重命名
+2019-03-05 10:54:17.566  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击左侧班级菜单按钮，准备重命名]
+2019-03-05 10:54:18.566  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[动态定位重命名标签使用的下标]By.xpath: /html/body/div[9]/div/div/span[1]
+2019-03-05 10:54:18.594  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:18.602  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [动态定位重命名标签使用的下标]By.xpath: /html/body/div[9]/div/div/span[1]
+2019-03-05 10:54:18.613  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击动态定位重命名标签使用的下标
+2019-03-05 10:54:18.686  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [动态定位重命名标签使用的下标]
+2019-03-05 10:54:18.686  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:18.741  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:18.764  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:18.774  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击重命名输入框
+2019-03-05 10:54:18.817  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [重命名输入框]
+2019-03-05 10:54:18.817  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:18.833  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:18.840  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:18.869  INFO  --- [main] eniumUtils.clear(SeleniumUtils.java:299)ogger{39} : 清除元素 [重命名输入框]上的内容
+2019-03-05 10:54:18.869  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:18.884  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:18.890  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:18.899  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:287)ogger{39} : 点击了输入框
+2019-03-05 10:54:19.469  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[确认重命名按钮]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[3]/div/a[2]
+2019-03-05 10:54:19.493  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:19.500  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [确认重命名按钮]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[3]/div/a[2]
+2019-03-05 10:54:19.510  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击确认重命名
+2019-03-05 10:54:19.553  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [确认重命名]
+2019-03-05 10:54:20.554  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div
+2019-03-05 10:54:20.589  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:20.597  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div
+2019-03-05 10:54:20.621  INFO  --- [main] (TeacherHome_001_LeftHelp_Test.java:129)ogger{39} : 重命名成功
+2019-03-05 10:54:20.639  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击班级
+2019-03-05 10:54:20.696  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击班级]
+2019-03-05 10:54:20.696  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[3]/span/a/div/div/div/i
+2019-03-05 10:54:20.741  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:20.750  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[3]/span/a/div/div/div/i
+2019-03-05 10:54:20.760  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击左侧班级菜单按钮，准备重命名
+2019-03-05 10:54:20.805  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击左侧班级菜单按钮，准备重命名]
+2019-03-05 10:54:21.805  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[动态定位重命名标签使用的下标]By.xpath: /html/body/div[10]/div/div/span[1]
+2019-03-05 10:54:21.836  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:21.843  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [动态定位重命名标签使用的下标]By.xpath: /html/body/div[10]/div/div/span[1]
+2019-03-05 10:54:21.851  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击动态定位重命名标签使用的下标
+2019-03-05 10:54:21.895  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [动态定位重命名标签使用的下标]
+2019-03-05 10:54:21.896  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:21.918  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:21.927  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:21.938  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击重命名输入框
+2019-03-05 10:54:21.987  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [重命名输入框]
+2019-03-05 10:54:21.987  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:22.003  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:22.009  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:22.034  INFO  --- [main] eniumUtils.clear(SeleniumUtils.java:299)ogger{39} : 清除元素 [重命名输入框]上的内容
+2019-03-05 10:54:22.034  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:22.050  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:22.056  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [重命名输入框]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[2]/div/input
+2019-03-05 10:54:22.064  INFO  --- [main] umUtils.sendKeys(SeleniumUtils.java:287)ogger{39} : 点击了输入框
+2019-03-05 10:54:22.651  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[确认重命名按钮]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[3]/div/a[2]
+2019-03-05 10:54:22.682  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:22.693  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [确认重命名按钮]By.xpath: /html/body/div[4]/div/div[2]/div/div/div[3]/div/a[2]
+2019-03-05 10:54:22.710  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击确认重命名
+2019-03-05 10:54:22.752  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [确认重命名]
+2019-03-05 10:54:23.752  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[3]/span/a/div
+2019-03-05 10:54:23.790  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:23.799  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[3]/span/a/div
+2019-03-05 10:54:23.828  INFO  --- [main] (TeacherHome_001_LeftHelp_Test.java:129)ogger{39} : 重命名成功
+2019-03-05 10:54:24.035  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:24.090  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:24.114  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:24.166  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击班级
+2019-03-05 10:54:24.274  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击班级]
+2019-03-05 10:54:24.274  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div/div/div/i
+2019-03-05 10:54:24.315  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:24.331  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div/div/div/i
+2019-03-05 10:54:24.347  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击左侧班级菜单按钮，准备删除
+2019-03-05 10:54:24.391  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击左侧班级菜单按钮，准备删除]
+2019-03-05 10:54:25.392  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[动态定位重命名标签使用的下标]By.xpath: /html/body/div[9]/div/div/span[2]
+2019-03-05 10:54:25.427  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:25.434  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [动态定位重命名标签使用的下标]By.xpath: /html/body/div[9]/div/div/span[2]
+2019-03-05 10:54:25.443  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击动态定位删除班级标签使用的下标
+2019-03-05 10:54:25.487  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [动态定位删除班级标签使用的下标]
+2019-03-05 10:54:25.488  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[确认删除按钮]By.xpath: /html/body/div[5]/div/div[2]/div/div/div[2]/div/a[2]
+2019-03-05 10:54:25.516  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:25.525  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [确认删除按钮]By.xpath: /html/body/div[5]/div/div[2]/div/div/div[2]/div/a[2]
+2019-03-05 10:54:25.533  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击确认删除该班级
+2019-03-05 10:54:25.601  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [确认删除该班级]
+2019-03-05 10:54:25.690  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:26.245  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:26.252  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:26.327  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:26.874  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:26.881  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:26.923  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击班级
+2019-03-05 10:54:26.973  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击班级]
+2019-03-05 10:54:26.973  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div/div/div/i
+2019-03-05 10:54:26.997  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:27.004  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [删除和重命名展示框]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li[2]/span/a/div/div/div/i
+2019-03-05 10:54:27.014  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击点击左侧班级菜单按钮，准备删除
+2019-03-05 10:54:27.062  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [点击左侧班级菜单按钮，准备删除]
+2019-03-05 10:54:28.062  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[动态定位重命名标签使用的下标]By.xpath: /html/body/div[9]/div/div/span[2]
+2019-03-05 10:54:28.082  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:28.089  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [动态定位重命名标签使用的下标]By.xpath: /html/body/div[9]/div/div/span[2]
+2019-03-05 10:54:28.099  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击动态定位删除班级标签使用的下标
+2019-03-05 10:54:28.141  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [动态定位删除班级标签使用的下标]
+2019-03-05 10:54:28.142  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[确认删除按钮]By.xpath: /html/body/div[5]/div/div[2]/div/div/div[2]/div/a[2]
+2019-03-05 10:54:28.163  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:28.171  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [确认删除按钮]By.xpath: /html/body/div[5]/div/div[2]/div/div/div[2]/div/a[2]
+2019-03-05 10:54:28.182  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:143)ogger{39} : [操作：]开始执行点击确认删除该班级
+2019-03-05 10:54:28.247  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:169)ogger{39} : 点击元素 [确认删除该班级]
+2019-03-05 10:54:28.350  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:28.379  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:28.385  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:28.467  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:100)ogger{39} : 开始查找元素[教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:29.000  INFO  --- [main] iumUtils$1.apply(SeleniumUtils.java:105)ogger{39} : true
+2019-03-05 10:54:29.008  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:114)ogger{39} : 找到了元素 [教师端，所有班级]By.xpath: //*[@id="app"]/div/div/div[1]/div[2]/div/div/ul/li[2]/ul/li
+2019-03-05 10:54:29.039  INFO  --- [main] nTestSuccess(TestResultListener.java:67)ogger{39} : LeftHelp 测试用例执行成功!
+2019-03-05 10:54:29.056  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = LeftHelp

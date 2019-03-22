@@ -1,0 +1,42 @@
+package test.testng.webElements;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginEle {
+  WebDriver driver;
+  // 默认构造方法
+  public LoginEle(WebDriver driver) {
+    // 当前页面、当前对象 （初始化页面元素）
+    PageFactory.initElements(driver, this);
+    this.driver = driver;
+  }
+  // 点击注册
+  @FindBy(xpath = "//*[@id='commonTopbar_login']/a[1]")
+  public WebElement loginA;
+  
+  //密码登录
+  @FindBy(xpath = "//*[@id='pwdLogin']")
+  public WebElement passwordLogin;
+
+  //QQ登录
+  @FindBy(xpath="//*[@id='thirdLogin']/a[1]")
+  public WebElement qqLogin;
+  
+  //拉起快捷登录
+  @FindBy(xpath="//*[@id='ptlogin_iframe']")
+  public WebElement runQQLogin;
+  
+  //输入手机号码
+  @FindBy(xpath="//*[@id='loginMobile']")
+  public WebElement inputMobileId;
+  
+  //输入电话号码后，点击发送验证码
+  @FindBy(xpath="//*[@id='loginMobilecodeSendBtn']")
+  public WebElement loginMobilecodeSendBtn;
+  
+  
+
+}

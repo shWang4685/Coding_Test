@@ -1,0 +1,61 @@
+2019-02-28 20:32:48.967  INFO  --- [main] .onTestStart(TestResultListener.java:73)ogger{39} : headerIndex 测试用例始执行！
+2019-02-28 20:32:48.975  INFO  --- [main] eacherHome_002_HeaderIndex_Test.java:41)ogger{39} : 开始添加登录cookie
+2019-02-28 20:32:50.812  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-02-28 20:32:50.852  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:50.863  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-02-28 20:32:50.879  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击官网首页校园标签
+2019-02-28 20:32:50.973  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:144)ogger{39} : [[[ChromeDriver: chrome on XP (4ebd49415c4aa3d378e7883f5a1934b4)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]]步骤出现了新的句柄]CDwindow-3535F02305A71C33B14C2631CEE6821C
+2019-02-28 20:32:50.989  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:148)ogger{39} : [当前页面句柄为：CDwindow-3535F02305A71C33B14C2631CEE6821C]
+2019-02-28 20:32:50.989  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [官网首页校园标签]
+2019-02-28 20:32:50.990  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[教师端，导航栏，头像]By.xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/img
+2019-02-28 20:32:52.048  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:52.057  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [教师端，导航栏，头像]By.xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/img
+2019-02-28 20:32:52.066  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击教师端首页头像
+2019-02-28 20:32:52.108  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [教师端首页头像]
+2019-02-28 20:32:52.108  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[教师端，导航栏，我的作品]By.xpath: /html/body/div[3]/div/div/a[1]
+2019-02-28 20:32:52.133  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : false
+2019-02-28 20:32:52.660  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:52.667  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [教师端，导航栏，我的作品]By.xpath: /html/body/div[3]/div/div/a[1]
+2019-02-28 20:32:52.677  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击教师端首页个人中心
+2019-02-28 20:32:52.736  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:144)ogger{39} : [[[ChromeDriver: chrome on XP (4ebd49415c4aa3d378e7883f5a1934b4)] -> xpath: /html/body/div[3]/div/div/a[1]]步骤出现了新的句柄]CDwindow-954BB4F95D7E1A1A404A4D5E9F6CE545
+2019-02-28 20:32:52.743  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:148)ogger{39} : [当前页面句柄为：CDwindow-954BB4F95D7E1A1A404A4D5E9F6CE545]
+2019-02-28 20:32:52.744  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [教师端首页个人中心]
+2019-02-28 20:32:52.744  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[个人中心，校园]By.xpath: //*[@id="app"]/div/div/div[1]/div/ul/li[3]/a
+2019-02-28 20:32:53.796  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:53.803  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [个人中心，校园]By.xpath: //*[@id="app"]/div/div/div[1]/div/ul/li[3]/a
+2019-02-28 20:32:53.814  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击个人中心校园
+2019-02-28 20:32:53.879  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:144)ogger{39} : [[[ChromeDriver: chrome on XP (4ebd49415c4aa3d378e7883f5a1934b4)] -> xpath: //*[@id="app"]/div/div/div[1]/div/ul/li[3]/a]步骤出现了新的句柄]CDwindow-EBB7E0AB9C73210DB6BF34D6E20C7C61
+2019-02-28 20:32:53.886  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:148)ogger{39} : [当前页面句柄为：CDwindow-EBB7E0AB9C73210DB6BF34D6E20C7C61]
+2019-02-28 20:32:53.886  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [个人中心校园]
+2019-02-28 20:32:54.026  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[教师端，导航栏，立即创作按钮]By.xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/a
+2019-02-28 20:32:55.082  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:55.092  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [教师端，导航栏，立即创作按钮]By.xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/a
+2019-02-28 20:32:55.103  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击教师端首页立即创作
+2019-02-28 20:32:55.164  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:144)ogger{39} : [[[ChromeDriver: chrome on XP (4ebd49415c4aa3d378e7883f5a1934b4)] -> xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/a]步骤出现了新的句柄]CDwindow-41D40EB86AB22670D57F9CF9C076637D
+2019-02-28 20:32:55.170  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:148)ogger{39} : [当前页面句柄为：CDwindow-41D40EB86AB22670D57F9CF9C076637D]
+2019-02-28 20:32:55.170  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [教师端首页立即创作]
+2019-02-28 20:32:56.585  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[JS页面平台logo]By.xpath: //*[@id="app"]/div/div[1]/a/img
+2019-02-28 20:32:56.618  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:56.626  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [JS页面平台logo]By.xpath: //*[@id="app"]/div/div[1]/a/img
+2019-02-28 20:32:56.637  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击个人中心校园
+2019-02-28 20:32:56.850  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [个人中心校园]
+2019-02-28 20:32:56.851  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-02-28 20:32:56.880  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:56.890  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [官网首页，校园标签]By.xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]
+2019-02-28 20:32:56.900  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击官网首页校园标签
+2019-02-28 20:32:56.975  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:144)ogger{39} : [[[ChromeDriver: chrome on XP (4ebd49415c4aa3d378e7883f5a1934b4)] -> xpath: //*[@id="app"]/div/div/div/div[1]/div[2]/a[3]]步骤出现了新的句柄]CDwindow-1B961AFAC4219EAE7FDFB30556203512
+2019-02-28 20:32:56.982  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:148)ogger{39} : [当前页面句柄为：CDwindow-1B961AFAC4219EAE7FDFB30556203512]
+2019-02-28 20:32:56.982  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [官网首页校园标签]
+2019-02-28 20:32:56.982  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[教师端，导航栏，头像]By.xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/img
+2019-02-28 20:32:58.041  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:58.048  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [教师端，导航栏，头像]By.xpath: //*[@id="app"]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/img
+2019-02-28 20:32:58.060  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击教师端首页头像
+2019-02-28 20:32:58.102  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [教师端首页头像]
+2019-02-28 20:32:58.102  INFO  --- [main] tForElementToLoad(SeleniumUtils.java:89)ogger{39} : 开始查找元素[教师端，导航栏，退出登录]By.xpath: /html/body/div[3]/div/div/a[2]
+2019-02-28 20:32:58.135  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : false
+2019-02-28 20:32:58.659  INFO  --- [main] niumUtils$1.apply(SeleniumUtils.java:94)ogger{39} : true
+2019-02-28 20:32:58.667  INFO  --- [main] ForElementToLoad(SeleniumUtils.java:103)ogger{39} : 找到了元素 [教师端，导航栏，退出登录]By.xpath: /html/body/div[3]/div/div/a[2]
+2019-02-28 20:32:58.678  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:132)ogger{39} : [操作：]开始执行点击教师端退出登录
+2019-02-28 20:32:58.852  INFO  --- [main] eniumUtils.click(SeleniumUtils.java:158)ogger{39} : 点击元素 [教师端退出登录]
+2019-02-28 20:32:58.898  INFO  --- [main] nTestSuccess(TestResultListener.java:67)ogger{39} : headerIndex 测试用例执行成功!
+2019-02-28 20:32:58.918  INFO  --- [main] ner.onFinish(TestResultListener.java:85)ogger{39} : 执行成功的用例 = headerIndex
